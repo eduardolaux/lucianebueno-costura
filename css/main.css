@@ -1,56 +1,56 @@
-.whatsapp-link {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 1px 1px 2px #888;
-    z-index: 1000;
+body {
+    color: #0D0D0D;
+    background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
-.fa-whatsapp {
-    margin-top: 16px;
+main {
+    padding: 20px;
+    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+    max-width: 800px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    margin: auto;       /*Alinha conteudo ao centro*/
+    /* width: 980px; */
+    /* float:left; */
+    /* position: relative; */
 }
 
-.menu-principal {
-    width: 100%;
-    /* background-color: white; */
-    /* background-color: #252323; */
+img {
+    width: 100%;        /*Mantém imagem dimensionada com o texto, impedindo rolagem na página*/
+    height: auto;
+}
+
+/*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
+.tamlogo {
+    width: 250px;
+    height: auto;
+}
+
+header{
+    /* /* background-color: white; */
+    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+    max-width: 800px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    padding: 20px;
+    margin: 0 auto;
     height: 50px;
     padding: 10px;
 }
 
-.logo {
-    text-align: center;     /*Logo alinhada ao centro*/
-    /* float: left; */      /*Logo alinhada à esquerda*/
-    /* padding: 10px; */
-    width:30%;
+/*_______________________ BARRA DE NAVEGADOR ______________________*/
+
+.header-2 {
+    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+    max-width: 800px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    /* background-color: white;
+    width:980px; */
+    margin: 0 auto;
+    padding: 5px;
 }
 
-.tamlogo {
-    width: 270px;
-    height: auto;
-}
-
-nav {
-    /* background-color: #0D0D0D; */
-    /* background-color: white; */
-}
-
-body {
-    /* margin-top: 15px; */
-    color: #0D0D0D;
-    /* background-color: #F2F2F2; */
-    /* background-color: white; */
-    background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
-    font-family:Verdana, Geneva, Tahoma, sans-serif
-    /* text-transform: uppercase;     */
-    /* width:980px; */
+a {
+    /* color: white;     Opções da barra de menu */
+    color: black;
+    text-decoration: none;  /* Des-sublinhando ítens */
 }
 
 /* BARRA MENU: DEIXAR UM ÍTEM DO LADO DO OUTRO */
@@ -67,28 +67,7 @@ ul {
     /* padding: 0px!important; */
 }
 
-header{
-    /* /* background-color: white; */
-    width:980px;
-    margin: 0 auto;
-    /* margin-top: 50px; */
-    margin-bottom: 15px;
-    padding: 25px;
-}
-
-.header-2 {
-    /* /* background-color: white; */
-    width:980px;
-    margin: 0 auto;
-    /* padding: 5px; */
-}
-
-a {
-    /* color: white;     Opções da barra de menu */
-    color: black;
-    text-decoration: none;  /* Des-sublinhando ítens */
-}
-
+/*_______________________________________________________________*/
 
 .borda {
     width: 150px;
@@ -132,13 +111,6 @@ p {
     color: #595959;
 }
 
-main {
-    margin: 0 auto;
-    width: 980px;
-    /* float:left; */
-    position: relative;
-}
-
 .coluna {
     flex-direction: column;
     gap: 32px;
@@ -167,20 +139,38 @@ footer img {
     width: 40px;
     height: 40px;
 }
+
+.whatsapp-link {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+}
+
+.fa-whatsapp {
+    margin-top: 16px;
+}
+
 section {
-    border-bottom: 0.4px solid black;
-    /* margin: 0 auto; */
-    margin-top: 20px;
-    width: 980px;
-    padding: 15px;
-    position: relative;
+    border-top: 0.4px solid black;
+    padding: 10px;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
 }
 
 footer {
     margin-top: 30px;
     margin: 0 auto;     /* Mantém os elementos do bloco centralizados na página*/
     position: relative;
-    width: 980px;
+    /* width: 980px; */
     display: flex;      /* Para deixar um item ao lado do outro */
     justify-content: center
 }
@@ -323,4 +313,23 @@ button {
     border: none;
     width: 100px;
     height: 30px;
+}
+
+.whatsapp-link {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+}
+
+.fa-whatsapp {
+    margin-top: 16px;
 }
