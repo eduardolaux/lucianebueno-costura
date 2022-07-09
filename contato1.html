@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng. Eduardo Laux - Projetos e laudos de acústica</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/contato.css" media=""
+</head>
+<body>
+	<a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=51992215385" target="_blank">
+		<i class="fa fa-whatsapp"></i>
+	</a>
+    <header class="menu-principal">
+            <div class="logo">
+                <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
+            </div>
+    </header
+
+    <div class="container">
+        <nav>
+            <div class="header-2">
+                <ul>
+                    <li>
+                        <a href="index.html">Início</a>
+                    </li>
+                    <li>
+                        <a href="projetos realizados.html">Projetos realizados</a>
+                    </li>
+                    <li>
+                    <a href="sobre.html">Sobre acústica</a>
+                </li>
+                <li>
+                    <a href="servicos.html">Serviços</a>
+                </li>
+                <li>
+                    <a href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>    
+
+        <header>
+            <div class="center">
+            <h1>Contato</h1>
+            </div>
+        </header>
+  
+    <div class="center">
+        <h2 id="titulo">Fale comigo</h2>
+        <p id="subtitulo">Comente aqui o seu caso:</p>
+    </div>
+
+    <form>  <!-- Tag de formulário-->
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="nome"><strong>Nome</strong></label>
+                    <input type "text" name="nome" id="nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="sobrenome"><strong>Sobrenome</strong></label>
+                    <input type="text" name="sobrenome" id="sobrenome" required>
+                </div>
+            </fieldset>
+
+            <div class="campo">
+                <label for="email"><strong>Email</strong></label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <!-- <div class="campo">
+                <label><strong>Que tipo de solução em acústica você está precisando no momento?</strong></label>
+                <label><br><br>
+                    <input type="radio" name="devweb" value="Projeto acústico" checked>Projeto acústico
+                </label>
+                <label>
+                    <input type="radio" name="devweb" value="Laudo técnico">Laudo técnico
+                </label>
+            </div>
+
+            <div class="campo">
+                <label>Idade</label>
+                <select id="Idade">
+                    <option selected disabled value="">Selecione</option>
+                    <option>Jovem</option>
+                    <option>Adulto</option>
+                    <option>Véio</option>
+                </select>
+            </div> -->
+
+        <fieldset class="grupo">
+            <div id="check">
+                <label><strong>Selecione o(s) tipo(s) de solução em acústica que você precisa:</strong></label><br><br>
+                <input type="checkbox" name="devweb" value="Projeto acústico" checked>Isolamento acústico
+                <input type="checkbox" name="devweb" value="Projeto acústico" checked>Condicionamento acústico
+                <input type="checkbox" name="devweb" value="Laudo técnico">Laudo técnico
+            </div>
+        </fieldset>
+
+        <div class="campo">
+            <br>
+            <label><strong>Descreva a sua necessidade:</strong></label>
+            <textarea row="6" style="width: 26em" id="necessidade" name="necessidade"></textarea>
+        </div>
+
+        <button type="submit">Concluído</button>
+
+    </form>
+    </div>
+</body>
+</html>

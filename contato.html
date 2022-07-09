@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="menu-principal">
+            <div class="logo">
+                <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
+            </div>
+    </header
+
+    <div class="container">
+        <nav>
+            <div class="header-2">
+                <ul>
+                    <li>
+                        <a href="index.html">Início</a>
+                    </li>
+                    <li>
+                        <a href="projetos realizados.html">Projetos realizados</a>
+                    </li>
+                    <li>
+                    <a href="sobre.html">Sobre acústica</a>
+                </li>
+                <li>
+                    <a href="servicos.html">Serviços</a>
+                </li>
+                <li>
+                    <a href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>    
+        <header class="center">
+                <img class="borda" src="./img/perfil.png"></img>
+    
+            <h1 class="cornome">Eduardo Laux</h1>
+            <h2>Engenheiro acústico</h2>
+            </div>
+        </header>
+        <form class="form" action="https://formsubmit.co/eduardodalaux@gmail.com" method="POST">
+            <h3 class="center">Formulário de contato</h3>    
+            <label for="name">Nome</label>
+            <input type="name" name="name" id="name" placeholder="Digite seu nome completo" required>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+            <label for="message"><strong>Descreva o(s) tipo(s) de solução em acústica que você precisa:</strong></label>
+            <textarea name="message" id="message" placeholder="Escreva aqui" required></textarea>
+            <!-- <input type="text" name="message" id="message" placeholder="Escreva aqui" required> -->
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/obrigado.html">
+            <button type="submit">Enviar</button>
+       </form>
+    </div>
+</body>
+</html>

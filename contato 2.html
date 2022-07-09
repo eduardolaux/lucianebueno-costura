@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng. Eduardo Laux - Projetos e laudos de acústica</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/contato.css" media=""
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<style>
+		.whatsapp-link {
+			position: fixed;
+			width: 60px;
+			height: 60px;
+			bottom: 40px;
+			right: 40px;
+			background-color: #25d366;
+			color: #fff;
+			border-radius: 50px;
+			text-align: center;
+			font-size: 30px;
+			box-shadow: 1px 1px 2px #888;
+			z-index: 1000;
+		}
+ 
+		.fa-whatsapp {
+			margin-top: 16px;
+		}
+	</style>
+    </head>
+<body>
+	<a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=51992215385" target="_blank">
+		<i class="fa fa-whatsapp"></i>
+	</a>
+    <header class="menu-principal">
+            <div class="logo">
+                <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
+            </div>
+    </header
+
+    <div class="container">
+        <nav>
+            <div class="header-2">
+                <ul>
+                    <li>
+                        <a href="index.html">Início</a>
+                    </li>
+                    <li>
+                        <a href="projetos realizados.html">Projetos realizados</a>
+                    </li>
+                    <li>
+                    <a href="sobre.html">Sobre acústica</a>
+                </li>
+                <li>
+                    <a href="servicos.html">Serviços</a>
+                </li>
+                <li>
+                    <a href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>    
+        <header>
+            <div class="center">
+                <img class="borda" src="./img/perfil.png"></img>
+    
+                <section>
+                    <h1 class="cornome">Eduardo Laux</h1>
+                <h2>Engenheiro acústico</h2>
+            </section>
+            <h2 id="titulo">Fale comigo</h2>
+            </div>
+        </header>
+    </div>
+
+    <div class="center">
+        <main>
+                <div class="grupo">
+                    <p id="subtitulo">Comente aqui o seu caso:</p>
+                </div>
+            
+                <form>  <!-- Tag de formulário-->
+                    <fieldset class="grupo">
+                        <div class="campo">
+                            <label for="nome"><strong>Nome</strong></label>
+                            <input type "text" name="nome" id="nome" required>
+                        </div>
+            
+                        <div class="campo">
+                            <label for="sobrenome"><strong>Sobrenome</strong></label>
+                            <input type="text" name="sobrenome" id="sobrenome" required>
+                        </div>
+                    </fieldset>
+            
+                    <div class="campo">
+                        <label for="email"><strong>Email</strong></label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+            
+                    <fieldset class="grupo">
+                        <div id="check">
+                            <label><strong>Selecione o(s) tipo(s) de solução em acústica que você precisa:</strong></label><br><br>
+                            <input type="checkbox" name="devweb" value="Projeto acústico" checked>Projeto acústico
+                            <input type="checkbox" name="devweb" value="Consultoria">Consultoria
+                            <input type="checkbox" name="devweb" value="Laudo técnico">Laudo técnico
+                        </div>
+                    </fieldset>
+            
+                    <div class="campo">
+                        <br>
+                        <label for="experiencia"><strong>Descreva a sua necessidade:</strong></label>
+                        <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia"></textarea>
+                    </div>
+            
+                    <!-- Botão para enviar o formulário -->
+                    <button class="botao" type="submit" onsubmit="">Concluído</button>            
+            
+                </form>  
+        </main>
+    </div>
+    
+</body>
+</html>
