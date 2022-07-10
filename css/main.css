@@ -28,8 +28,8 @@ img {
 
 header{
     /* /* background-color: white; */
-    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    max-width: 800px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    /* min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+    /* max-width: 800px;   Especifica largura máxima (quando o celular está deitado) */ */
     padding: 20px;
     margin: 0 auto;
     height: 50px;
@@ -38,11 +38,14 @@ header{
 
 /*_______________________ BARRA DE NAVEGADOR ______________________*/
 
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;    /*Viewport Height: unidade responsiva que se adapta à altura da janela de navegação do usuario*/
+}
+
 .header-2 {
-    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    max-width: 800px;   /*Especifica largura máxima (quando o celular está deitado)*/
-    /* background-color: white;
-    width:980px; */
     margin: 0 auto;
     padding: 5px;
 }
@@ -55,16 +58,69 @@ a {
 
 /* BARRA MENU: DEIXAR UM ÍTEM DO LADO DO OUTRO */
 ul {
+    /* min-width: 320px;   Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical) */
+    /* max-width: 800px;   Especifica largura máxima (quando o celular está deitado)  */
+    gap: 50px;
     border-bottom: 0.1px solid black;
     font-weight: bold;
     text-transform: uppercase;    
     display: flex;          /* Um tópico do lado do outro*/
-    justify-content: space-between;
     list-style-type: none;  /* Tirando modelo de itemização*/
-    align-items: center;    /* Alinhando verticalmente ao centro*/
     padding: 5px;           /*Largura da faixa que envolve a barra*/
     margin-top: 10px;       /* Espaçamento entre ícones das redes sociais*/
     /* padding: 0px!important; */
+}
+
+/* MENU PARA DISPOSITIVOS MÓVEIS */
+/* Configurando os "3 -" para desaparecer sob determinadas condições: */
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 730px) {
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .login-button {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+}
+
+.mobile-menu-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.mobile-menu .nav-item {
+    display: block;
+    padding-top: 1.2rem;
+}
+
+.open {
+    display: block;
+}
+
+.icon {
+    height: 23px;
+    width: auto;
 }
 
 /*_______________________________________________________________*/
