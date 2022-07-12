@@ -8,7 +8,7 @@ body {
 main {
     padding: 20px;
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    max-width: 900px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    max-width: 840px;   /*Especifica largura máxima (quando o celular está deitado)*/
     margin: auto;       /*Alinha conteudo ao centro*/
     /* width: 980px; */
     /* float:left; */
@@ -249,7 +249,7 @@ section {
 /* _____________________ RODAPÉ _________________________ */
 footer {
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    max-width: 900px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    max-width: 840px;   /*Especifica largura máxima (quando o celular está deitado)*/
     margin-top: 30px;
     margin: 0 auto;     /* Mantém os elementos do bloco centralizados na página*/
     position: relative;
