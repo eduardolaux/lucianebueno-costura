@@ -10,7 +10,9 @@
 <body>
     <header class="menu-principal">
             <div class="logo">
+                <a href="index.html">
                 <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
+                </a>
             </div>
     </header
 
@@ -18,53 +20,85 @@
         <nav>
             <div class="header-2">
                 <ul>
-                    <li>
-                        <a href="index.html">Início</a>
-                    </li>
-                    <li>
-                        <a href="projetos realizados.html">Projetos realizados</a>
-                    </li>
-                    <li>
-                    <a href="sobre.html">Sobre acústica</a>
-                </li>
-                <li>
-                    <a href="servicos.html">Serviços</a>
-                </li>
-                <li>
-                    <a href="contato.html">Contato</a>
-                    </li>
+                    <li class="nav-item"><a href="index.html">Início</a></li>
+                    <li class="nav-item"><a href="projetos realizados.html">Projetos realizados</a></li>
+                    <li class="nav-item"><a href="sobre.html">Sobre acústica</a></li>
+                    <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
+                    <li class="nav-item"><a href="contato.html">Contato</a></li>
                 </ul>
             </div>
-        </nav>    
-
-        <header>
-            <div class="center">
-            <h1>Sobre acústica</h1>
+    
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="img/menu.png" alt=""></button>
             </div>
-        </header>
-
+        </nav>    
+    
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="index.html">Início</a></li>
+                <li class="nav-item"><a href="projetos realizados.html">Projetos realizados</a></li>
+                <li class="nav-item"><a href="sobre.html">Sobre acústica</a></li>
+                <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
+                <li class="nav-item"><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    
+        <script src="script.js"></script>
+    
         <main>
             <div class="center">
-            <h2>Laudos técnicos e projetos acústicos</h2>
-                <p>Laudos técnicos de acústica são documentos que se amparam em critérios estabelecidos por normas para confirmar 
-                    ou não a procedência de uma determinada premissa inicial ou estabelecer uma avaliação acústica desejada. Os 
-                    projetos acústicos se amparam em normas afins às dos laudos e, assim como estes, também se ocupam com o estudo 
-                    de um determinado objeto de avaliação, apoiando-se em ferramentas computacionais que auxiliam no processamento 
-                    e impressão de resultados, de modo a descrever e esclarecer um evento sonoro. A imagem abaixo ilustra um exemplo 
-                    disso, em que, a partir de valores declarados de níveis de pressão sonora, é obtido um mapa acústico, que tem 
-                    por fim descrever como esse evento sonoro se comporta em um caso sob determinadas condições.</p>
+                <h2>Laudos técnicos x projetos acústicos</h2>
+                    <p>Laudos técnicos de acústica são documentos que se amparam em critérios estabelecidos por normas para confirmar 
+                        ou não a procedência de uma determinada premissa inicial ou estabelecer uma avaliação acústica desejada. Os 
+                        projetos acústicos se amparam em normas afins às dos laudos e, assim como estes, também se ocupam com o estudo 
+                        de um determinado objeto de avaliação, apoiando-se em ferramentas computacionais que auxiliam no processamento 
+                        e impressão de resultados, de modo a descrever e esclarecer um evento sonoro. A imagem abaixo ilustra um exemplo 
+                        disso, em que, a partir de valores declarados de níveis de pressão sonora, é obtido um mapa acústico, que tem 
+                        por fim descrever como esse evento sonoro se comporta em um caso sob determinadas condições.</p>
 
-            <div class="center">
-                <img class="tamfotos" src="./img/mapa3d.png"></img>
+                    <img class="tamfotos" src="./img/mapa3d.png"></img>
+
+                        <p>Por fim, o laudo é um documento que compara níveis de pressão sonora evidenciados com valores aceitáveis por 
+                            norma para, posteriormente, averiguar se a situação em que o objeto de estudo se encontra está, ou não, de 
+                            acordo com esses limites estabelecidos. Portanto, como laudos de acústica servem para fazer constatações 
+                            acerca de um evento sonoro, é imprescindível que hajam instrumentos de medição para a avaliação sonora que 
+                            será documentada no relatório.  Projetos acústicos visam conduzir o cliente de forma a orientá-lo e oferecê-lo 
+                            recomendações acerca de uma situação onde há necessidade de conforto acústico sobre determinado local. No caso 
+                            de projetos acústicos, não há uma necessidade tão estrita quanto ao uso desses instrumentos de medição.</p>
+
+                <h2>Instrumentos de medição</h2>
+                <p> Sonômetro
+                    <p> Fonte sonora
+                    </p> 
+
+                <h2>Normas de acústica</h2>
+                <p> NBR 10151
+                    <p> NBR 10152
+                        <p> NBR 15575
+                        </p>
+                <h2>Isolamento acústico</h2>
+                <p> Perda de transmissão
+                    <p> Ensaios em câmaras para obtenção de desempenho de materiais
+                        <p> Lei da massa
+                        </p>
+
+                <h2>Ruído aéreo x ruído de impacto</h2>
+
+                <h2>Condicionamento acústico</h2>
+
+                <p> Coeficiente de absorção sonora
+                    <p> Difusão sonora
+                        <p> D50, C80, STI, T60 ...
+                        </p>
+
+                <h2>Por que fazer o projeto acústico?</h2>
+
+                <p> Conforto acústico
+                    <p> Saúde auditiva
+                        <p> Confidencialidade
+                            <p> Inteligibilidade
+                            </p>
+
             </div>
-
-                    <p>Por fim, o laudo é um documento que compara níveis de pressão sonora evidenciados com valores aceitáveis por 
-                        norma para, posteriormente, averiguar se a situação em que o objeto de estudo se encontra está, ou não, de 
-                        acordo com esses limites estabelecidos. Portanto, como laudos de acústica servem para fazer constatações 
-                        acerca de um evento sonoro, é imprescindível que hajam instrumentos de medição para a avaliação sonora que 
-                        será documentada no relatório.  Projetos acústicos visam conduzir o cliente de forma a orientá-lo e oferecê-lo 
-                        recomendações acerca de uma situação onde há necessidade de conforto acústico sobre determinado local. No caso 
-                        de projetos acústicos, não há uma necessidade tão estrita quanto ao uso desses instrumentos de medição.</p>
-                    </div>
     
         </main>

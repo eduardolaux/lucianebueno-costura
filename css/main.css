@@ -2,13 +2,13 @@ body {
     color: #0D0D0D;
     background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+    /* font-family: 'Fjalla One', sans-serif; */
 }
 
 main {
     padding: 20px;
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    max-width: 800px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    max-width: 900px;   /*Especifica largura máxima (quando o celular está deitado)*/
     margin: auto;       /*Alinha conteudo ao centro*/
     /* width: 980px; */
     /* float:left; */
@@ -21,6 +21,7 @@ img {
 }
 
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
+
 .tamlogo {
     width: 250px;
     height: auto;
@@ -30,8 +31,8 @@ header{
     /* /* background-color: white; */
     /* min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
     /* max-width: 800px;   Especifica largura máxima (quando o celular está deitado) */ */
-    padding: 20px;
     margin: 0 auto;
+    margin-left: 50px;
     height: 50px;
     padding: 10px;
 }
@@ -60,7 +61,7 @@ a {
 ul {
     /* min-width: 320px;   Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical) */
     /* max-width: 800px;   Especifica largura máxima (quando o celular está deitado)  */
-    gap: 50px;
+    gap: 140px;
     border-bottom: 0.1px solid black;
     font-weight: bold;
     text-transform: uppercase;    
@@ -87,6 +88,9 @@ ul {
     }
     .nav-item {
         display: none;
+    }
+    ul {
+        border-bottom: none;
     }
     .login-button {
         display: none;
@@ -126,21 +130,37 @@ ul {
 /*_______________________________________________________________*/
 
 .borda {
-    width: 150px;
-    height: auto;
-    border-radius:50%;          /* Estilizando bordas da imagem */
-    border: 2px solid #8b8b8b;
-    }
+width: 150px;
+height: auto;
+border-radius:50%;          /* Estilizando bordas da imagem */
+border: 2px solid #8b8b8b;
+}
 
-    .borda2 {
-        border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 2px solid #343434;
-    }
-    
-    /* CRIANDO CLASSE PARA CENTRALIZAR FOTOS/TEXTOS/ETC. */
+.borda2 {
+    border-radius:3%;          /* Estilizando bordas da imagem */
+    border: 2px solid #343434;
+}
+
+
+/* ______________________ TEXTOS ________________________________ */
+
+
+/* CRIANDO CLASSE PARA CENTRALIZAR FOTOS/TEXTOS/ETC. */
 .center {
     text-align: center;
-    align-items: center;
+    /* text-align-last: center; */
+    /* align-items: center; */
+}   
+
+
+.center p {
+    text-align: justify;
+
+}
+/* CRIANDO CLASSE PARA CENTRALIZAR À DIREITA FOTOS/TEXTOS/ETC. */
+.direita {
+    text-align: right;
+    /* align-items: right; */
 }
 .cornome {
 /* color: #069656; */
@@ -163,13 +183,18 @@ h3 {
 }
 
 p {
-    text-align: justify;
+    /* text-indent: 20px; */
     color: #595959;
 }
-
+/* _____________________________________________________________ */
 .coluna {
     flex-direction: column;
     gap: 32px;
+}
+
+.detel {
+    margin-left: 8%;
+    margin-top: 15%;
 }
 
 .tamfotos {
@@ -221,14 +246,16 @@ section {
     /* margin-top: 20px; */
     /* margin-bottom: 20px; */
 }
-
+/* _____________________ RODAPÉ _________________________ */
 footer {
+    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+    max-width: 900px;   /*Especifica largura máxima (quando o celular está deitado)*/
     margin-top: 30px;
     margin: 0 auto;     /* Mantém os elementos do bloco centralizados na página*/
     position: relative;
     /* width: 980px; */
     display: flex;      /* Para deixar um item ao lado do outro */
-    justify-content: center
+    justify-content: center;
 }
 
 footer a{
@@ -240,6 +267,15 @@ footer p{
     margin-top: 2px;       /* Espaçamento entre ícones das redes sociais*/
 }
 
+.footer-2 {
+    text-align: center;
+    align-items: left;
+    /* margin-left: auto; */
+    /* margin-right: 100px; */
+    margin-bottom: 50px;
+}
+
+/* ____________________________________________________ */
 .container {
     padding: 0px 50px;      /* Reduzindo largura do conteúdo contido entre margem esquerda e direita da página*/
 }
@@ -364,7 +400,8 @@ margin: 8px 0px;
 } */
 
 button {
-    margin-left: 12.5rem;
+    /* margin-left: 12.5rem; */
+    margin: 0 auto;
     background-color: white;
     border: none;
     width: 100px;

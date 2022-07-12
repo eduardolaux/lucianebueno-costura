@@ -10,7 +10,9 @@
 <body>
     <header class="menu-principal">
             <div class="logo">
+                <a href="index.html">
                 <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
+                </a>
             </div>
     </header
 
@@ -18,31 +20,31 @@
         <nav>
             <div class="header-2">
                 <ul>
-                    <li>
-                        <a href="index.html">Início</a>
-                    </li>
-                    <li>
-                        <a href="projetos realizados.html">Projetos realizados</a>
-                    </li>
-                    <li>
-                    <a href="sobre.html">Sobre acústica</a>
-                </li>
-                <li>
-                    <a href="servicos.html">Serviços</a>
-                </li>
-                <li>
-                    <a href="contato.html">Contato</a>
-                    </li>
+                    <li class="nav-item"><a href="index.html">Início</a></li>
+                    <li class="nav-item"><a href="projetos realizados.html">Projetos realizados</a></li>
+                    <li class="nav-item"><a href="sobre.html">Sobre acústica</a></li>
+                    <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
+                    <li class="nav-item"><a href="contato.html">Contato</a></li>
                 </ul>
             </div>
-        </nav>    
-
-        <header>
-            <div class="center">
-            <h1>Projetos realizados</h1>
-            </div>
-        </header>
     
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="img/menu.png" alt=""></button>
+            </div>
+        </nav>    
+    
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="index.html">Início</a></li>
+                <li class="nav-item"><a href="projetos realizados.html">Projetos realizados</a></li>
+                <li class="nav-item"><a href="sobre.html">Sobre acústica</a></li>
+                <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
+                <li class="nav-item"><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    
+        <script src="script.js"></script>
+        
         <main>
             <div class="center">
             <h2>Centro de Eventos - Vinícola Luis Argenta</h2>
@@ -64,8 +66,9 @@
                         foram realizadas medições in situ, a fim de coletar os níveis de pressão sonora produzidos no local 
                         em situações de trânsito aéreo. A partir disso as soluções estruturais apropriadas foram projetadas 
                         para que as edificações atendam aos critérios estabelecidos pela legislação vigente.</p>
+
                 <div class="center">
-                    <img class="tamfotosmenor" src="./img/Medicao canela.JPG"></img>
+                    <img class="tamfotosmenor" src="./img/Medicao canela.JPG"></img></br>
                     <img src="./img/Avião da Linha Azul - Fora da pousada (Decolagem 1)_f.png"></img>
                 </div>
         </section>
@@ -85,3 +88,12 @@
         </section>
     
         </main>
+        
+        <div class="footer-2">
+            <p>
+                <small>
+                    <!-- <img class="icon" src="img/email.png" alt=""> --> E-mail: eduardodalaux@gmail.com <br />
+                    <!--<img class="icon" src="img/fone.ico" alt=""> --> Contato: (51) 99221-5385
+                </small>
+            </p>
+        </div>

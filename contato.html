@@ -12,31 +12,39 @@
 <body>
     <header>
             <div>
+                <a href="index.html">
                 <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
+                </a>
             </div>
     </header>
 
-        <nav>
-            <div class="header-2">
-                <ul>
-                    <li>
-                        <a href="index.html">Início</a>
-                    </li>
-                    <li>
-                        <a href="projetos realizados.html">Projetos realizados</a>
-                    </li>
-                    <li>
-                    <a href="sobre.html">Sobre acústica</a>
-                </li>
-                <li>
-                    <a href="servicos.html">Serviços</a>
-                </li>
-                <li>
-                    <a href="contato.html">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>    
+    <nav>
+        <div class="header-2">
+            <ul>
+                <li class="nav-item"><a href="index.html">Início</a></li>
+                <li class="nav-item"><a href="projetos realizados.html">Projetos realizados</a></li>
+                <li class="nav-item"><a href="sobre.html">Sobre acústica</a></li>
+                <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
+                <li class="nav-item"><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+
+        <div class="mobile-menu-icon">
+            <button onclick="menuShow()"><img class="icon" src="img/menu.png" alt=""></button>
+        </div>
+    </nav>    
+
+    <div class="mobile-menu">
+        <ul>
+            <li class="nav-item"><a href="index.html">Início</a></li>
+            <li class="nav-item"><a href="projetos realizados.html">Projetos realizados</a></li>
+            <li class="nav-item"><a href="sobre.html">Sobre acústica</a></li>
+            <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
+            <li class="nav-item"><a href="contato.html">Contato</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
     
     <main>
         <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=51992215385" target="_blank">
