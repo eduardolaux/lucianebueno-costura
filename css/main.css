@@ -61,7 +61,7 @@ a {
 ul {
     /* min-width: 320px;   Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical) */
     /* max-width: 800px;   Especifica largura máxima (quando o celular está deitado)  */
-    gap: 140px;
+    gap: 100px;
     border-bottom: 0.1px solid black;
     font-weight: bold;
     text-transform: uppercase;    
@@ -206,6 +206,13 @@ p {
 
 .tamfotosmenor {
     width: 400px;
+    height: auto;
+    border-radius:3%;          /* Estilizando bordas da imagem */
+    border: 2px solid #343434;
+}
+
+.tamfotosmenor2 {
+    width: 320px;
     height: auto;
     border-radius:3%;          /* Estilizando bordas da imagem */
     border: 2px solid #343434;
