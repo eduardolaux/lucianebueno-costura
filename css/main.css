@@ -141,6 +141,27 @@ border: 2px solid #8b8b8b;
     border: 2px solid #343434;
 }
 
+.tamfotos {
+    width: 540px;
+    height: auto;
+    border-radius:3%;          /* Estilizando bordas da imagem */
+    border: 3px solid #343434;
+}
+
+.tamfotosmenor {
+    width: 400px;
+    height: auto;
+    border-radius:3%;          /* Estilizando bordas da imagem */
+    border: 2px solid #343434;
+}
+
+.tamfotosmenor2 {
+    width: 320px;
+    height: auto;
+    border-radius:3%;          /* Estilizando bordas da imagem */
+    border: 2px solid #343434;
+}
+
 
 /* ______________________ TEXTOS ________________________________ */
 
@@ -195,27 +216,6 @@ p {
 .detel {
     margin-left: 8%;
     margin-top: 15%;
-}
-
-.tamfotos {
-    width: 540px;
-    height: auto;
-    border-radius:3%;          /* Estilizando bordas da imagem */
-    border: 3px solid #343434;
-}
-
-.tamfotosmenor {
-    width: 400px;
-    height: auto;
-    border-radius:3%;          /* Estilizando bordas da imagem */
-    border: 2px solid #343434;
-}
-
-.tamfotosmenor2 {
-    width: 320px;
-    height: auto;
-    border-radius:3%;          /* Estilizando bordas da imagem */
-    border: 2px solid #343434;
 }
 
 .imagemprojeto {
