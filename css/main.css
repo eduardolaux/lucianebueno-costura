@@ -137,6 +137,8 @@ border: 2px solid #8b8b8b;
 }
 
 .borda2 {
+    width: 840px;
+    height: auto;
     border-radius:3%;          /* Estilizando bordas da imagem */
     border: 2px solid #343434;
 }
