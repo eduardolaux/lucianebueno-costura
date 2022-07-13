@@ -137,14 +137,15 @@ border: 2px solid #8b8b8b;
 }
 
 .borda2 {
-    width: 840px;
+    /* width: 840px; */
+    width: 110vh;
     height: auto;
     border-radius:3%;          /* Estilizando bordas da imagem */
     border: 2px solid #343434;
 }
 
 .tamfotos {
-    width: 540px;
+    width: 70vh;
     height: auto;
     border-radius:3%;          /* Estilizando bordas da imagem */
     border: 3px solid #343434;
