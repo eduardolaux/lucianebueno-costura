@@ -16,7 +16,9 @@ main {
 }
 
 img {
-    width: 100%;        /*Mantém imagem dimensionada com o texto, impedindo rolagem na página*/
+    /* width: 100%;        Mantém imagem dimensionada com o texto, impedindo rolagem na página */
+    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+    max-width: 840px;   /*Especifica largura máxima (quando o celular está deitado)*/
     height: auto;
 }
 
