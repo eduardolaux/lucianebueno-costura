@@ -16,9 +16,7 @@ main {
 }
 
 img {
-    /* width: 100%;        Mantém imagem dimensionada com o texto, impedindo rolagem na página */
-    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    max-width: 840px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    width: 100%;        /*Mantém imagem dimensionada com o texto, impedindo rolagem na página*/
     height: auto;
 }
 
@@ -153,7 +151,8 @@ border: 2px solid #8b8b8b;
 }
 
 .tamfotosmenor {
-    width: 400px;
+    /* width: 400px; */
+    width: 50vh;
     height: auto;
     border-radius:3%;          /* Estilizando bordas da imagem */
     border: 2px solid #343434;
