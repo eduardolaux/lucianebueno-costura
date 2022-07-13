@@ -15,11 +15,6 @@ main {
     /* position: relative; */
 }
 
-img {
-    width: 100%;        /*Mantém imagem dimensionada com o texto, impedindo rolagem na página*/
-    height: auto;
-}
-
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
 
 .tamlogo {
@@ -127,46 +122,6 @@ ul {
     width: auto;
 }
 
-/*_______________________________________________________________*/
-
-.borda {
-width: 150px;
-height: auto;
-border-radius:50%;          /* Estilizando bordas da imagem */
-border: 2px solid #8b8b8b;
-}
-
-.borda2 {
-    /* width: 840px; */
-    width: 110vh;
-    height: auto;
-    border-radius:3%;          /* Estilizando bordas da imagem */
-    border: 2px solid #343434;
-}
-
-.tamfotos {
-    width: 70vh;
-    height: auto;
-    border-radius:3%;          /* Estilizando bordas da imagem */
-    border: 3px solid #343434;
-}
-
-.tamfotosmenor {
-    /* width: 400px; */
-    width: 50vh;
-    height: auto;
-    border-radius:3%;          /* Estilizando bordas da imagem */
-    border: 2px solid #343434;
-}
-
-.tamfotosmenor2 {
-    width: 320px;
-    height: auto;
-    border-radius:3%;          /* Estilizando bordas da imagem */
-    border: 2px solid #343434;
-}
-
-
 /* ______________________ TEXTOS ________________________________ */
 
 
@@ -222,17 +177,67 @@ p {
     margin-top: 15%;
 }
 
-.imagemprojeto {
-    width: 25vw;
-    padding-left: 15px;
+/*_______________________________________________________________*/
+
+img
+{
+    max-width: 100%;
+    object-fit: scale-down;
 }
+
+/* .container img {
+    max-width: 100%;
+} */
 
 footer img {
     width: 40px;
     height: 40px;
 }
 
-.whatsapp-link {
+.imagemprojeto {
+    width: 25vw;
+    padding-left: 15px;
+}
+
+.borda {
+    width: 150px;
+    height: auto;
+    border-radius:50%;          /* Estilizando bordas da imagem */
+    border: 2px solid #8b8b8b;
+    }
+    
+    .borda2 {
+        /* width: 840px; */
+        width: 110vh;
+        height: auto;
+        border-radius:3%;          /* Estilizando bordas da imagem */
+        border: 2px solid #343434;
+    }
+    
+    .tamfotos {
+        width: 70vh;
+        height: auto;
+        border-radius:3%;          /* Estilizando bordas da imagem */
+        border: 3px solid #343434;
+    }
+    
+    .tamfotosmenor {
+        /* width: 400px; */
+        width: 50vh;
+        height: auto;
+        border-radius:3%;          /* Estilizando bordas da imagem */
+        border: 2px solid #343434;
+    }
+    
+    .tamfotosmenor2 {
+        width: 320px;
+        height: auto;
+        border-radius:3%;          /* Estilizando bordas da imagem */
+        border: 2px solid #343434;
+    }
+    
+    
+    .whatsapp-link {
     position: fixed;
     width: 60px;
     height: 60px;
