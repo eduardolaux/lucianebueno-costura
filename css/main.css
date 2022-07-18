@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Slab:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=PT+Sans+Narrow&family=Roboto+Slab:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
+
 body {
     color: #0D0D0D;
     background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
     /* font-family: 'Fjalla One', sans-serif; */
+    /* font-family: 'Roboto Slab', serif */
+    /* font-family: 'PT Sans Narrow', sans-serif; */
+    font-family: 'Catamaran', sans-serif;
 }
 
 main {
@@ -181,13 +188,9 @@ p {
 
 img
 {
-    max-width: 100%;
     object-fit: scale-down;
-}
-
-/* .container img {
     max-width: 100%;
-} */
+}
 
 footer img {
     width: 40px;
@@ -197,6 +200,16 @@ footer img {
 .imagemprojeto {
     width: 25vw;
     padding-left: 15px;
+}
+
+.imgsonometro {
+    width: 55vh;
+    height: auto;
+}
+
+.imgfonte {
+    width: 40vh;
+    height: auto;
 }
 
 .borda {
