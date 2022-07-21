@@ -63,7 +63,7 @@ a {
 ul {
     /* min-width: 320px;   Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical) */
     /* max-width: 800px;   Especifica largura máxima (quando o celular está deitado)  */
-    gap: 100px;
+    gap: 150px;
     border-bottom: 0.1px solid black;
     font-weight: bold;
     text-transform: uppercase;    
@@ -184,7 +184,7 @@ p {
     margin-top: 15%;
 }
 
-/*_______________________________________________________________*/
+/*______________________________IMAGENS_________________________________*/
 
 img
 {
@@ -192,6 +192,15 @@ img
     max-width: 100%;
 }
 
+/* Perfil */
+.borda {
+    width: 150px;
+    height: auto;
+    border-radius:50%;          /* Estilizando bordas da imagem */
+    border: 2px solid #8b8b8b;
+    }
+    
+/* Rodapé */
 footer img {
     width: 40px;
     height: 40px;
@@ -202,38 +211,20 @@ footer img {
     padding-left: 15px;
 }
 
-.imgsonometro {
-    width: 55vh;
-    height: auto;
-}
-
 .imgfonte {
     width: 40vh;
     height: auto;
+    vertical-align: middle;
 }
 
-.borda {
-    width: 150px;
+.imgsonometro {
+    width: 55vh;
     height: auto;
-    border-radius:50%;          /* Estilizando bordas da imagem */
-    border: 2px solid #8b8b8b;
-    }
-    
-    .borda2 {
-        /* width: 840px; */
-        width: 110vh;
-        height: auto;
-        border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 2px solid #343434;
-    }
-    
-    .tamfotos {
-        width: 70vh;
-        height: auto;
-        border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 3px solid #343434;
-    }
-    
+    vertical-align: middle;
+}
+
+/* ______Com borda______ */
+
     .tamfotosmenor {
         /* width: 400px; */
         width: 50vh;
@@ -242,14 +233,43 @@ footer img {
         border: 2px solid #343434;
     }
     
+   .tamfotosmedio {
+        width: 60vh;
+        height: auto;
+        border-radius:3%;          /* Estilizando bordas da imagem */
+        border: 3px solid #343434;
+    }
+   
+    .tamfotos {
+        width: 70vh;
+        height: auto;
+        border-radius:3%;          /* Estilizando bordas da imagem */
+        border: 3px solid #343434;
+    }
+
     .tamfotosmenor2 {
         width: 320px;
         height: auto;
         border-radius:3%;          /* Estilizando bordas da imagem */
         border: 2px solid #343434;
     }
+
+    .borda2 {
+        width: 110vh;
+        height: auto;
+        border-radius:3%;          /* Estilizando bordas da imagem */
+        border: 2px solid #343434;
+        }
     
-    
+    /* _________________ */
+
+    .imgvert {
+        height: 45vh;
+        width: auto;
+        vertical-align: middle;
+        margin: 5px 40px; /* Change this to fit all images */
+    }    
+    /* ______________________________________________________________________ */
     .whatsapp-link {
     position: fixed;
     width: 60px;
