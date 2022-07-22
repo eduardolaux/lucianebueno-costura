@@ -41,6 +41,16 @@ header{
 
 /*_______________________ BARRA DE NAVEGADOR ______________________*/
 
+.container {
+    padding: 0px 50px;      /* Reduzindo largura do conteúdo contido entre margem esquerda e direita da página*/
+}
+
+a {
+    /* color: white;     Opções da barra de menu */
+    color: black;
+    text-decoration: none;  /* Des-sublinhando ítens */
+}
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -48,15 +58,17 @@ nav {
     height: 8vh;    /*Viewport Height: unidade responsiva que se adapta à altura da janela de navegação do usuario*/
 }
 
+/* nav a:hover {
+    color: rgb(255, 213, 0)
+} */
+
+a:hover {
+    color: rgb(14, 145, 0)
+}
+
 .header-2 {
     margin: 0 auto;
     padding: 5px;
-}
-
-a {
-    /* color: white;     Opções da barra de menu */
-    color: black;
-    text-decoration: none;  /* Des-sublinhando ítens */
 }
 
 /* BARRA MENU: DEIXAR UM ÍTEM DO LADO DO OUTRO */
@@ -74,7 +86,8 @@ ul {
     /* padding: 0px!important; */
 }
 
-/* MENU PARA DISPOSITIVOS MÓVEIS */
+/* _______________MENU PARA DISPOSITIVOS MÓVEIS______________________ */
+
 /* Configurando os "3 -" para desaparecer sob determinadas condições: */
 .mobile-menu-icon {
     display: none;
@@ -82,6 +95,7 @@ ul {
 
 .mobile-menu {
     display: none;
+    background-color: #D9D9D9;
 }
 
 @media screen and (max-width: 730px) {
@@ -92,7 +106,9 @@ ul {
         display: none;
     }
     ul {
+        /* transition: all .5s; */
         border-bottom: none;
+        gap:2px
     }
     .login-button {
         display: none;
@@ -111,7 +127,7 @@ ul {
 .mobile-menu ul {
     display: flex;
     flex-direction: column;
-    text-align: center0;
+    text-align: center;
     padding-bottom: 1rem;
 }
 
@@ -322,15 +338,6 @@ footer p{
     /* margin-left: auto; */
     /* margin-right: 100px; */
     margin-bottom: 50px;
-}
-
-/* ____________________________________________________ */
-.container {
-    padding: 0px 50px;      /* Reduzindo largura do conteúdo contido entre margem esquerda e direita da página*/
-}
-
-nav a:hover {
-    color: red
 }
 
 /* SERVIÇOS */
