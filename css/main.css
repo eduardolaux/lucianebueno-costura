@@ -5,10 +5,289 @@
 body {
     color: #0D0D0D;
     background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
-    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
-    /* font-family: 'Fjalla One', sans-serif; */
-    /* font-family: 'Roboto Slab', serif */
-    /* font-family: 'PT Sans Narrow', sans-serif; */
+    font-family: 'Catamaran', sans-serif;
+}
+
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  
+  /*===== Colores =====*/
+  --first-color: #747474;
+  --dark-color: white;
+  --dark-color-alt: white;
+  --white-color: #282B3A;
+
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*===== BASE =====*/
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bd-grid {
+  max-width: 1024px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/*===== HEADER =====*/
+.header {
+  width: 100%;
+  /* height: var(--header-height); */
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  padding: 0 1.5rem;
+  background-color: var(--dark-color);
+  z-index: var(--z-fixed);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* .header__logo {
+  color: var(--white-color);
+} */
+
+.header__toggle {
+  font-size: 1.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+/*===== NAV =====*/
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    width: 100%;
+    height: 100vh;
+    padding: 1.5rem 0;
+    z-index: var(--z-fixed);
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+}
+
+.nav__content {
+  height: 100%;
+  -ms-grid-rows: max-content 1fr max-content;
+      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+      grid-template-rows: max-content 1fr max-content;
+  row-gap: 2rem;
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.3rem;
+  padding: .25rem;
+  background-color: var(--dark-color-alt);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* padding-top: .25rem; */
+  margin-bottom: .8rem;
+  width: 106px;
+  height: 106px;
+  background-color: white;
+  border-radius: 50%;
+  border: 0.5px solid #343434;
+  overflow: hidden;
+}
+
+.nav__img img {
+  width: 96px;
+}
+
+.nav__name {
+  display: block;
+  color: var(--white-color);
+}
+
+.nav__profesion {
+  font-size: var(--small-font-size);
+}
+
+.nav__menu {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.nav__item {
+  margin: 2.5rem 0;
+}
+
+.nav__link {
+  color: var(--white-color);
+}
+
+.nav__social {
+  padding-top: .5rem;
+}
+
+.nav__social-icon {
+  font-size: 1.2rem;
+  color: var(--white-color);
+  margin-right: 1rem;
+}
+
+.nav__social-icon:hover {
+  color: var(--first-color);
+}
+
+/*Aparecer menu*/
+.show {
+  left: 0;
+}
+
+/*Active menu*/
+.active {
+  color: var(--first-color);
+}
+
+/*===== MEDIA QUERIES =====*/
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .header {
+    height: calc(var(--header-height) + 1rem);
+  }
+  .header__logo, .header__toggle {
+    display: none;
+  }
+  .nav {
+    width: 100%;
+  }
+  .nav__content {
+    -ms-grid-columns: (max-content)[3];
+        grid-template-columns: repeat(3, -webkit-max-content);
+        grid-template-columns: repeat(3, max-content);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .nav__close, .nav__profesion {
+    display: none;
+  }
+  .nav__perfil {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav__img {
+    width: 32px;
+    height: 32px;
+    margin-right: .5rem;
+    margin-bottom: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav__img img {
+    width: 26px;
+  }
+  .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav__item {
+    margin: 0 .25rem;
+  }
+  .nav__link {
+    padding: .5rem .8rem;
+    border-radius: .25rem;
+  }
+  .nav__link:hover {
+    background-color: var(--first-color);
+  }
+  .active {
+    background-color: var(--first-color);
+    color: var(--white-color);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ___________________________________________________________________________ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Slab:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=PT+Sans+Narrow&family=Roboto+Slab:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
+
+body {
+    color: #0D0D0D;
+    background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
     font-family: 'Catamaran', sans-serif;
 }
 
@@ -19,130 +298,15 @@ main {
     margin: auto;       /*Alinha conteudo ao centro*/
     /* width: 980px; */
     /* float:left; */
-    /* position: relative; */
+    position: relative;
+    margin-top: 10px;
 }
 
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
 
 .tamlogo {
-    width: 250px;
+    width: 200px;
     height: auto;
-}
-
-header{
-    /* /* background-color: white; */
-    /* min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    /* max-width: 800px;   Especifica largura máxima (quando o celular está deitado) */ */
-    margin: 0 auto;
-    margin-left: 50px;
-    height: 50px;
-    padding: 10px;
-}
-
-/*_______________________ BARRA DE NAVEGADOR ______________________*/
-
-.container {
-    padding: 0px 50px;      /* Reduzindo largura do conteúdo contido entre margem esquerda e direita da página*/
-}
-
-a {
-    /* color: white;     Opções da barra de menu */
-    color: black;
-    text-decoration: none;  /* Des-sublinhando ítens */
-}
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 8vh;    /*Viewport Height: unidade responsiva que se adapta à altura da janela de navegação do usuario*/
-}
-
-/* nav a:hover {
-    color: rgb(255, 213, 0)
-} */
-
-a:hover {
-    color: rgb(14, 145, 0)
-}
-
-.header-2 {
-    margin: 0 auto;
-    padding: 5px;
-}
-
-/* BARRA MENU: DEIXAR UM ÍTEM DO LADO DO OUTRO */
-ul {
-    /* min-width: 320px;   Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical) */
-    /* max-width: 800px;   Especifica largura máxima (quando o celular está deitado)  */
-    gap: 150px;
-    border-bottom: 0.1px solid black;
-    font-weight: bold;
-    text-transform: uppercase;    
-    display: flex;          /* Um tópico do lado do outro*/
-    list-style-type: none;  /* Tirando modelo de itemização*/
-    padding: 5px;           /*Largura da faixa que envolve a barra*/
-    margin-top: 10px;       /* Espaçamento entre ícones das redes sociais*/
-    /* padding: 0px!important; */
-}
-
-/* _______________MENU PARA DISPOSITIVOS MÓVEIS______________________ */
-
-/* Configurando os "3 -" para desaparecer sob determinadas condições: */
-.mobile-menu-icon {
-    display: none;
-}
-
-.mobile-menu {
-    display: none;
-    background-color: #D9D9D9;
-}
-
-@media screen and (max-width: 730px) {
-    .nav-bar {
-        padding: 1.5rem 4rem;
-    }
-    .nav-item {
-        display: none;
-    }
-    ul {
-        /* transition: all .5s; */
-        border-bottom: none;
-        gap:2px
-    }
-    .login-button {
-        display: none;
-    }
-    .mobile-menu-icon {
-        display: block;
-    }
-}
-
-.mobile-menu-icon button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.mobile-menu ul {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 1rem;
-}
-
-.mobile-menu .nav-item {
-    display: block;
-    padding-top: 1.2rem;
-}
-
-.open {
-    display: block;
-}
-
-.icon {
-    height: 23px;
-    width: auto;
 }
 
 /* ______________________ TEXTOS ________________________________ */
@@ -378,44 +542,13 @@ background-color: red;
     display: block;
     width: 100%;
 }
-/*
- .form label {
-    color: rgb(0, 0, 0);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-} 
 
-.form input,
-.form textarea {
-    font: inherit;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    transition: border-color;
-    box-shadow: 0.2s;
-
-}
-
-*/
  .form textarea {
     margin-bottom: 1rem;
     border-radius: 8px;
     min-height: 13rem;
     resize: vertical;
 }
-
-/* 
-.form input: hover,
-.form input: focus,
-.form textarea: hover,
-.form textarea: focus {
-    outline: none;
-    border-color: #09d;
-    box-shadow: 0 0 0 3px #4dc8ff;
-}
-
-*/
 
 .form button {
     display: block;
@@ -450,10 +583,6 @@ width: 100%;
 padding: 8px 0px;
 margin: 8px 0px;
 }
-
-/* .form input[type=text] {
-    height: 100px;
-} */
 
 button {
     /* margin-left: 12.5rem; */

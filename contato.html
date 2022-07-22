@@ -25,41 +25,52 @@
 </head>
 
 <body>
-    <header>
-            <div>
-                <a href="index.html">
-                <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
-                </a>
+
+<!-- __________________________________BARRA DE MENU___________________________________________ -->
+<header class="header">
+    <a href="index.html" class="header__logo"><img class="tamlogo" src ="./img/logo_eng.png" /></a>
+
+    <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+
+    <nav class="nav" id="nav-menu">
+        <div class="nav__content bd-grid">
+
+            <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+
+            <div class="nav__perfil">
+                <div class="nav__img">
+                    <img src="./img/logo_eng.png" alt="">
+                </div>
+                
+                <div>
+                    <a href="#" class="nav__name">Eduardo Laux</a>
+                    <span class="nav__profesion">Engenheiro Acústico</span>
+                </div>
             </div>
-    </header>
 
-    <nav>
-        <div class="header-2">
-            <ul>
-                <li class="nav-item"><a href="index.html">Início</a></li>
-                <li class="nav-item"><a href="projetos realizados.html">Projetos</a></li>
-                <li class="nav-item"><a href="sobre.html">Acústica</a></li>
-                <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
-                <li class="nav-item"><a href="contato.html">Contato</a></li>
-            </ul>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Início</a></li>
+                    <li class="nav__item"><a href="projetos realizados.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Acústica</a></li>
+                    <!-- <li class="nav__item"><a href="#" class="nav__link">Portfolio</a></li> -->
+                    <li class="nav__item"><a href="contato.html" class="nav__link active">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__social">
+                <a href="https://www.linkedin.com/in/eduardo-laux-159835117/" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://www.instagram.com/eng.eduardolaux/" class="nav__social-icon"><ion-icon name="logo-instagram"></ion-icon></a>
+                <!-- <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a> -->
+            </div>
         </div>
+    </nav>
+</header>
+            
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <script src="script.js"></script>
 
-        <div class="mobile-menu-icon">
-            <button onclick="menuShow()"><img class="icon" src="img/menu.png" alt=""></button>
-        </div>
-    </nav>    
-
-    <div class="mobile-menu">
-        <ul>
-            <li class="nav-item"><a href="index.html">Início</a></li>
-            <li class="nav-item"><a href="projetos realizados.html">Projetos</a></li>
-            <li class="nav-item"><a href="sobre.html">Acústica</a></li>
-            <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
-            <li class="nav-item"><a href="contato.html">Contato</a></li>
-        </ul>
-    </div>
-
-    <script src="script.js"></script>
+        <!-- ________________________________________________________________________________________ -->    
     
     <main>
         <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=51992215385" target="_blank">

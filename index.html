@@ -25,44 +25,50 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
-<!-- ___________________________________HEADER PRINCIPAL________________________________________ -->
 
-<body>
-    <header>
-            <div>
-                <a href="index.html">
-                <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
-                </a>
-            </div>
-    </header>
 <!-- __________________________________BARRA DE MENU___________________________________________ -->
-    <nav>
-        <div class="header-2">
-            <ul>
-                <li class="nav-item"><a href="index.html">Início</a></li>
-                <li class="nav-item"><a href="projetos realizados.html">Projetos</a></li>
-                <li class="nav-item"><a href="sobre.html">Acústica</a></li>
-                <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
-                <li class="nav-item"><a href="contato.html">Contato</a></li>
-            </ul>
+<header class="header">
+    <a href="index.html" class="header__logo"><img class="tamlogo" src ="./img/logo_eng.png" /></a>
+
+    <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+
+    <nav class="nav" id="nav-menu">
+        <div class="nav__content bd-grid">
+
+            <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+
+            <div class="nav__perfil">
+                <div class="nav__img">
+                    <img src="./img/logo_eng.png" alt="">
+                </div>
+                
+                <div>
+                    <a href="#" class="nav__name">Eduardo Laux</a>
+                    <span class="nav__profesion">Engenheiro Acústico</span>
+                </div>
+            </div>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link active">Início</a></li>
+                    <li class="nav__item"><a href="projetos realizados.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Acústica</a></li>
+                    <!-- <li class="nav__item"><a href="#" class="nav__link">Portfolio</a></li> -->
+                    <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__social">
+                <a href="https://www.linkedin.com/in/eduardo-laux-159835117/" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://www.instagram.com/eng.eduardolaux/" class="nav__social-icon"><ion-icon name="logo-instagram"></ion-icon></a>
+                <!-- <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a> -->
+            </div>
         </div>
-
-        <div class="mobile-menu-icon">
-            <button onclick="menuShow()"><img class="icon" src="img/menu.png" alt=""></button>
-        </div>
-    </nav>    
-
-    <div class="mobile-menu">
-        <ul>
-            <li class="nav-item"><a href="index.html">Início</a></li>
-            <li class="nav-item"><a href="projetos realizados.html">Projetos</a></li>
-            <li class="nav-item"><a href="sobre.html">Acústica</a></li>
-            <!-- <li class="nav-item"><a href="servicos.html">Serviços</a></li> -->
-            <li class="nav-item"><a href="contato.html">Contato</a></li>
-        </ul>
-    </div>
-
-    <script src="script.js"></script>
+    </nav>
+</header>
+            
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <script src="script.js"></script>
 
     <!-- _____________________________ÍCONE WHATS APP________________________________________________ -->
 
@@ -96,25 +102,25 @@
     
         <footer>
 
-            <a href="https://www.instagram.com/eng.eduardolaux/" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="https://www.instagram.com/eng.eduardolaux/" target="_blank" rel="noopener noreferrer">
                 <img src="./img/logo insta.png"></img>
                 <p>Instagram</p>
             </a>
             <a href="https://www.linkedin.com/in/eduardo-laux-159835117/" target="_blank" rel="noopener noreferrer">
                 <img src="./img/logo linkedin.png"></img>
                 <p>Linkedin</p>
-            </a>
+            </a> -->
+            <p>
+                <small>
+                    <!-- <img class="icon" src="img/email.png" alt=""> --> E-mail: eduardodalaux@gmail.com <br />
+                    <!--<img class="icon" src="img/fone.ico" alt=""> --> Contato: (51) 99221-5385
+                </small>
+            </p>
 
         </footer>    
 
-            <div class="footer-2">
-                <p>
-                    <small>
-                        <!-- <img class="icon" src="img/email.png" alt=""> --> E-mail: eduardodalaux@gmail.com <br />
-                        <!--<img class="icon" src="img/fone.ico" alt=""> --> Contato: (51) 99221-5385
-                    </small>
-                </p>
-            </div>
+            <!-- <div class="footer-2">
+            </div> -->
 
 </body>
 
