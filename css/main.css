@@ -395,6 +395,8 @@ footer img {
     width: 40vh;
     height: auto;
     vertical-align: middle;
+    /* border-radius:3%;          /* Estilizando bordas da imagem */
+    /* border: 2px solid #343434; */ */
 }
 
 .imgsonometro {
@@ -404,6 +406,14 @@ footer img {
 }
 
 /* ______Com borda______ */
+
+    .imgfonte2 {
+      width: 50vh;
+      height: auto;
+      vertical-align: middle;
+      border-radius:3%;          /* Estilizando bordas da imagem */
+      border: 2px solid #343434;
+  }
 
     .tamfotosmenor {
         /* width: 400px; */
@@ -448,8 +458,19 @@ footer img {
         width: auto;
         vertical-align: middle;
         margin: 5px 40px; /* Change this to fit all images */
+        border-radius:3%;          /* Estilizando bordas da imagem */
+        border: 2px solid #343434;
     }    
-    /* ______________________________________________________________________ */
+
+    .imgvert2 {
+      height: 45vh;
+      width: auto;
+      vertical-align: middle;
+      margin: 5px 40px; /* Change this to fit all images */
+      border-radius:3%;          /* Estilizando bordas da imagem */
+      border: 2px solid #343434;
+}    
+  /* ______________________________________________________________________ */
 
 section {
     border-top: 0.4px solid black;
