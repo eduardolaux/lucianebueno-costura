@@ -482,6 +482,7 @@ section {
 footer {
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
     max-width: 840px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    padding-bottom: 30px;
     margin-top: 30px;
     margin: 0 auto;     /* Mantém os elementos do bloco centralizados na página*/
     position: relative;
@@ -588,12 +589,14 @@ margin: 8px 0px;
 }
 
 button {
-    /* margin-left: 12.5rem; */
-    margin: 0 auto;
-    background-color: white;
-    border: none;
-    width: 100px;
-    height: 30px;
+  /* margin-left: 12.5rem; */
+  font-family: 'Catamaran', sans-serif;
+  cursor: pointer;
+  margin: 0 auto;
+  background-color: rgb(197, 197, 197);
+  border: none;
+  width: 100px;
+  height: 30px;
 }
 
 .whatsapp-link {
