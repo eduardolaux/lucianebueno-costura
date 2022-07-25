@@ -10,12 +10,17 @@
     
     <!-- Para mostrar imagem prévia em link de compartilhamento whatsapp -->
     <meta property="og:image" itemprop="image"
-    content="https://eduardolaux.github.io/engenharia-acustica/index/img/logo_icon32x32.png">
+    content="https://eduardolaux.github.io/engenharia-acustica/logo_icon32x32.png">
 
     <meta property="og:type" content="website" />
     <meta property="og:image:type" content="image/png">
 
-    <meta property="og:url" content="https://eduardolaux.github.io/engenharia-acustica/index">
+    <!-- Indica que tamanhos menores que 300px não vão funcionar no WPP -->
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+
+    <!-- Página que será visitada quando for clicada no FB ou WPP -->
+    <meta property="og:url" content="https://eduardolaux.github.io/engenharia-acustica">
 
     <title>Eng. Eduardo Laux - Projetos e laudos de acústica</title>
 
@@ -29,7 +34,7 @@
 
 <!-- __________________________________BARRA DE MENU___________________________________________ -->
 <header class="header">
-    <a href="index.html" class="header__logo"><img class="tamlogo" src ="./img/logo_eng.png" /></a>
+    <a href="pagina inicial.html" class="header__logo"><img class="tamlogo" src ="./img/logo_eng.png" /></a>
 
     <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
 
@@ -51,7 +56,7 @@
 
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link active">Início</a></li>
+                    <li class="nav__item"><a href="pagina inicial.html" class="nav__link active">Início</a></li>
                     <li class="nav__item"><a href="projetos realizados.html" class="nav__link">Projetos</a></li>
                     <li class="nav__item"><a href="sobre.html" class="nav__link">Acústica</a></li>
                     <!-- <li class="nav__item"><a href="#" class="nav__link">Portfolio</a></li> -->
