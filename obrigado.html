@@ -1,49 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-</head>
+
 
 <body>
-    <div class="container">
-        <header class="menu-principal">
-            <div class="logo">
-                <img class="tamlogo" src ="./img/logo_eng_transparente.png" />
-            </div>
-    </header
 
-    <div class="container">
-        <nav>
-            <div class="header-2">
-                <ul>
-                    <li>
-                        <a href="pagina inicial.html">Início</a>
-                    </li>
-                    <li>
-                        <a href="projetos realizados.html">Projetos realizados</a>
-                    </li>
-                    <li>
-                    <a href="sobre.html">Sobre acústica</a>
-                </li>
-                <li>
-                    <a href="servicos.html">Serviços</a>
-                </li>
-                <li>
-                    <a href="contato.html">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>    
-        <header class="center">
-                <img class="borda" src="./img/perfil.png"></img>
+    <!-- __________________________________BARRA DE MENU___________________________________________ -->
+    <header class="header">
+        <a href="index.html" class="header__logo"><img class="tamlogo" src ="./img/logo_eng.png" /></a>
     
-            <h1>Obrigado pelo seu contato!</h1>
+        <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+    
+        <nav class="nav" id="nav-menu">
+            <div class="nav__content bd-grid">
+    
+                <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+    
+                <div class="nav__perfil">
+                    <div class="nav__img">
+                        <img src="./img/logo_eng.png" alt="">
+                    </div>
+                    
+                    <div>
+                        <a href="#" class="nav__name">Eduardo Laux</a>
+                        <span class="nav__profesion">Engenheiro Acústico</span>
+                    </div>
+                </div>
+    
+                <div class="nav__menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Início</a></li>
+                        <li class="nav__item"><a href="projetos realizados.html" class="nav__link">Projetos</a></li>
+                        <li class="nav__item"><a href="sobre.html" class="nav__link">Acústica</a></li>
+                        <!-- <li class="nav__item"><a href="#" class="nav__link">Portfolio</a></li> -->
+                        <li class="nav__item"><a href="contato.html" class="nav__link active">Contato</a></li>
+                    </ul>
+                </div>
+    
+                <div class="nav__social">
+                    <a href="https://www.linkedin.com/in/eduardo-laux-159835117/" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="https://www.instagram.com/eng.eduardolaux/" class="nav__social-icon"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <!-- <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a> -->
+                </div>
             </div>
-        </header>
+        </nav>
+    </header>
         
 
     
