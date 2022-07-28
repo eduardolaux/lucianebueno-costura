@@ -399,6 +399,14 @@ footer img {
     /* border: 2px solid #343434; */ */
 }
 
+.imgaereo2 {
+  width: 40vh;
+  height: auto;
+  vertical-align: middle;
+  /* border-radius:3%;          /* Estilizando bordas da imagem */
+  border: 1px solid #343434; */
+}
+
 .imgsonometro {
     width: 55vh;
     height: auto;
@@ -412,43 +420,43 @@ footer img {
       height: auto;
       vertical-align: middle;
       border-radius:3%;          /* Estilizando bordas da imagem */
-      border: 2px solid #343434;
+      border: 1px solid #343434;
   }
 
     .tamfotosmenor {
         /* width: 400px; */
         width: 50vh;
         height: auto;
-        border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 2px solid #343434;
+        /* border-radius:3%;          Estilizando bordas da imagem */
+        border: 1px solid #343434;
     }
     
    .tamfotosmedio {
         width: 60vh;
         height: auto;
-        border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 3px solid #343434;
+        /* border-radius:3%;          Estilizando bordas da imagem */
+        border: 1px solid #343434;
     }
    
     .tamfotos {
         width: 70vh;
         height: auto;
-        border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 3px solid #343434;
+        /* border-radius:3%;          Estilizando bordas da imagem */
+        border: 1px solid #343434;
     }
 
     .tamfotosmenor2 {
         width: 320px;
         height: auto;
         border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 2px solid #343434;
+        border: 1px solid #343434;
     }
 
     .borda2 {
         width: 110vh;
         height: auto;
-        border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 2px solid #343434;
+        /* border-radius:3%;          Estilizando bordas da imagem */
+        border: 1px solid #343434;
         }
     
     /* _________________ */
@@ -458,8 +466,8 @@ footer img {
         width: auto;
         vertical-align: middle;
         margin: 5px 40px; /* Change this to fit all images */
-        border-radius:3%;          /* Estilizando bordas da imagem */
-        border: 2px solid #343434;
+        /* border-radius:3%;          Estilizando bordas da imagem */
+        border: 1px solid #343434;
     }    
 
     .imgvert2 {
@@ -468,7 +476,7 @@ footer img {
       vertical-align: middle;
       margin: 5px 40px; /* Change this to fit all images */
       border-radius:3%;          /* Estilizando bordas da imagem */
-      border: 2px solid #343434;
+      border: 1px solid #343434;
 }    
   /* ______________________________________________________________________ */
 
