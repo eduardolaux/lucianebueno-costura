@@ -2,10 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=PT+Sans+Narrow&family=Roboto+Slab:wght@100;200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
 
+/* Configuração global: */
+/* *{
+height: 100%;
+} */
+
 body {
     color: #0D0D0D;
     background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
-    font-family: 'Catamaran', sans-serif;
+    background-attachment: fixed;
+    /* background: #abbaab;  fallback for old browsers
+    background: -webkit-linear-gradient(to bottom, #ffffff, #abbaab);  Chrome 10-25, Safari 5.1-6
+    background: linear-gradient(to bottom, #ffffff, #abbaab); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-family: 'Catamaran', sans-serif;
 }
 
 /*===== GOOGLE FONTS =====*/
@@ -285,12 +294,6 @@ img {
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=PT+Sans+Narrow&family=Roboto+Slab:wght@100;200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
 
-body {
-    color: #0D0D0D;
-    background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
-    font-family: 'Catamaran', sans-serif;
-}
-
 main {
     padding: 20px;
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
@@ -370,6 +373,19 @@ img
 {
     object-fit: scale-down;
     max-width: 100%;
+}
+
+/* Disposição de fotos: */
+.features {
+  padding: 20px;
+  /* display: flex; */
+  flex-wrap: nowrap | wrap | wrap-reverse;
+  justify-content: center;
+}
+
+.features img {
+  margin: auto;
+  width: 350px;
 }
 
 /* Perfil */
