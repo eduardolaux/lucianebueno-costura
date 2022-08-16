@@ -208,6 +208,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: default;
 }
 
 .dropdown__icon {
