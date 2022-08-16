@@ -107,7 +107,7 @@ a {
     left: -100%;
     background-color: var(--dark-color);
     color: var(--white-color);
-    width: 40%;
+    width: 50%;
     height: 100vh;
     padding: 1.5rem 0;
     z-index: var(--z-fixed);
