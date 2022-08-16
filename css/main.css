@@ -357,6 +357,12 @@ main {
 
 /* ______________________ TEXTOS ________________________________ */
 
+.texto_L{
+  margin-left: 2rem;
+  /* position: relative; */
+  text-align: left;
+  color: #595959;
+}
 
 /* CRIANDO CLASSE PARA CENTRALIZAR FOTOS/TEXTOS/ETC. */
 .center {
@@ -364,7 +370,6 @@ main {
     /* text-align-last: center; */
     /* align-items: center; */
 }   
-
 
 .center p {
     text-align: justify;
@@ -421,15 +426,15 @@ img {
 
 /* Disposição de fotos: */
 .features {
-  padding: 20px;
+  /* padding: 5px; */
   /* display: flex; */
   flex-wrap: nowrap | wrap | wrap-reverse;
   justify-content: center;
 }
 
 .features img {
-  margin: auto;
-  width: 350px;
+  /* margin: auto; */
+  height: 260px;
 }
 
 /* Perfil */
