@@ -22,7 +22,7 @@ body {
 
 /*===== VARIABLES CSS =====*/
 :root {
-  --header-height: 3rem;
+  --header-height: 2.5rem;
   
   /*===== Colores =====*/
   --first-color: #c5c5c5;
@@ -46,10 +46,9 @@ body {
   }
 }
 
-/*===== BASE =====*/
+/*===== _______________________BASE______________________ =====*/
 *, ::before, ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ul {
@@ -62,40 +61,33 @@ a {
   text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.dp-menu ul li:hover ul{
+  display: block;
 }
 
 .bd-grid {
   max-width: 1024px;
-  display: -ms-grid;
   display: grid;
   -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
+  grid-template-columns: 100%;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
 
-/*===== HEADER =====*/
+/*===== _________________________HEADER_________________________ =====*/
 .header {
-  width: 100%;
-  /* height: var(--header-height); */
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: var(--header-height);
   padding: 0 1.5rem;
   background-color: var(--dark-color);
   z-index: var(--z-fixed);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* .header__logo {
@@ -104,11 +96,10 @@ img {
 
 .header__toggle {
   font-size: 1.5rem;
-  color: var(--white-color);
   cursor: pointer;
 }
 
-/*===== NAV =====*/
+/*===== ______________________NAV BAR__________________________ =====*/
 @media screen and (max-width: 768px) {
   .nav {
     position: fixed;
@@ -116,7 +107,7 @@ img {
     left: -100%;
     background-color: var(--dark-color);
     color: var(--white-color);
-    width: 100%;
+    width: 28%;
     height: 100vh;
     padding: 1.5rem 0;
     z-index: var(--z-fixed);
@@ -144,13 +135,8 @@ img {
 }
 
 .nav__img {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  /* padding-top: .25rem; */
+  justify-content: center;
   margin-bottom: .8rem;
   width: 106px;
   height: 106px;
@@ -187,6 +173,11 @@ img {
   color: var(--white-color);
 }
 
+.nav__link:hover {
+  color: #595959;
+  /* background-color: var(--first-color); */
+}
+
 .nav__social {
   padding-top: .5rem;
 }
@@ -208,10 +199,45 @@ img {
 
 /*Active menu*/
 .active {
-  color: var(--first-color);
+  color: #595959;
 }
 
-/*===== MEDIA QUERIES =====*/
+/*=== Dropdown ===*/
+.dropdown__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown__icon {
+  font-size: 1.3rem;
+  transition: .5s;
+}
+
+.dropdown__menu {
+  margin: 1rem 0 0 1rem;
+  display: none;
+}
+
+.dropdown__item {
+  margin: 1rem 0;
+}
+
+.dropdown:hover > .dropdown__menu {
+  display: block;
+}
+
+.dropdown:hover .dropdown__icon {
+  transform: rotate(180deg);
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 576px) {
+  .nav {
+    width: 288px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   body {
     margin: 0;
@@ -261,15 +287,14 @@ img {
     width: 26px;
   }
   .nav__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
+    align-items: center;
   }
   .nav__item {
     margin: 0 .25rem;
   }
   .nav__link {
-    padding: .5rem .8rem;
+    padding: .3rem .8rem;
     border-radius: .25rem;
   }
   .nav__link:hover {
@@ -279,6 +304,22 @@ img {
     background-color: var(--first-color);
     color: var(--white-color);
   }
+
+.dropdown {
+  position: relative;
+}
+.dropdown__menu {
+  background-color: white;
+  position: fixed;
+  margin: 0;
+  top: calc(var(--header-height) + 0.4rem);
+  padding: .5rem 1.5rem;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  border-radius: .5rem;
+}
+.dropdown__item {
+  margin: .5rem 0;
+}
 }
 
 @media screen and (min-width: 1024px) {
@@ -295,14 +336,14 @@ img {
 @import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
 
 main {
-    padding: 20px;
+    /* padding: 20px; */
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
     max-width: 840px;   /*Especifica largura máxima (quando o celular está deitado)*/
     margin: auto;       /*Alinha conteudo ao centro*/
     /* width: 980px; */
     /* float:left; */
     position: relative;
-    margin-top: 10px;
+    margin-top: 100px;
 }
 
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
@@ -369,10 +410,11 @@ p {
 
 /*______________________________IMAGENS_________________________________*/
 
-img
-{
-    object-fit: scale-down;
-    max-width: 100%;
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: scale-down;
 }
 
 /* Disposição de fotos: */

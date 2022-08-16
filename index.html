@@ -8,17 +8,17 @@
     <meta name="keywords" content="acústica, engenharia acústica, projeto acústico, consultoria, acústica residencial, soluções acústicas, materiais acústicos, empresas de acústica, isolamento acústico, tratamento acústico, laudo, projeto, absorção sonora">
     <meta name="robots" content="index, follow">
     <meta charset="utf-8">
-    <!-- <meta http-equiv="refresh" content="2"> -->
     
-    <title>Eng. Eduardo Laux - Projetos e laudos de acústica</title>
     
-    <!-- <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon"> -->
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+    <title>Eng. Eduardo Laux - Projetos e laudos de acústica</title>
+   
     <!-- Para mostrar título prévio em link de compartilhamento whatsapp -->
     <meta property="og:title" content="Eng. Eduardo Laux - Projetos e laudos de acústica" />
     <!-- Para mostrar descrição prévia em link de compartilhamento whatsapp -->
@@ -38,13 +38,10 @@
 <header class="header">
     <a href="index.html" class="header__logo"><img class="tamlogo" src ="./img/logo_eng.png" /></a>
 
-    <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+    <i class='bx bx-menu header__toggle' id="header-toggle"></i>
 
     <nav class="nav" id="nav-menu">
         <div class="nav__content bd-grid">
-
-            <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
-
             <div class="nav__perfil">
                 <div class="nav__img">
                     <img src="./img/logo_eng.png" alt="">
@@ -60,7 +57,20 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="index.html" class="nav__link active">Início</a></li>
                     <li class="nav__item"><a href="projetos realizados.html" class="nav__link">Projetos</a></li>
-                    <li class="nav__item"><a href="sobre.html" class="nav__link">Acústica</a></li>
+
+                    <li class="nav__item dropdown">
+                        <a href="sobre.html" class="nav__link dropdown__link">Acústica <i class='bx bx-chevron-down dropdown__icon'></i></a>
+
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="escritorios.html" class="nav__link">Escritórios</a></li>
+                            <li class="dropdown__item"><a href="escolas.html" class="nav__link">Escolas</a></li>
+                            <li class="dropdown__item"><a href="igrejas.html" class="nav__link">Igrejas</a></li>
+                            <li class="dropdown__item"><a href="restaurantes.html" class="nav__link">Restaurantes</a></li>
+                            <li class="dropdown__item"><a href="auditorios.html" class="nav__link">Auditórios</a></li>
+                            <li class="dropdown__item"><a href="estudios.html" class="nav__link">Estúdios</a></li>
+                        </ul>
+
+                    </li>
                     <!-- <li class="nav__item"><a href="#" class="nav__link">Portfolio</a></li> -->
                     <li class="nav__item"><a href="contato.html" class="nav__link">Contato</a></li>
                 </ul>
@@ -74,7 +84,8 @@
         </div>
     </nav>
 </header>
-            
+
+        <!--===== MAIN JS =====-->
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
         <script src="script.js"></script>
 
@@ -105,30 +116,17 @@
 
     </div>
 
-
     </main>
     
         <footer>
-
-            <!-- <a href="https://www.instagram.com/eng.eduardolaux/" target="_blank" rel="noopener noreferrer">
-                <img src="./img/logo insta.png"></img>
-                <p>Instagram</p>
-            </a>
-            <a href="https://www.linkedin.com/in/eduardo-laux-159835117/" target="_blank" rel="noopener noreferrer">
-                <img src="./img/logo linkedin.png"></img>
-                <p>Linkedin</p>
-            </a> -->
             <p>
                 <small>
-                    <!-- <img class="icon" src="img/email.png" alt=""> --> E-mail: eduardodalaux@gmail.com <br />
-                    <!--<img class="icon" src="img/fone.ico" alt=""> --> Contato: (51) 99221-5385
+                    E-mail: eduardodalaux@gmail.com <br />
+                    Contato: (51) 99221-5385
                 </small>
             </p>
 
         </footer>    
-
-            <!-- <div class="footer-2">
-            </div> -->
 
 </body>
 
