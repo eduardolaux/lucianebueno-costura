@@ -364,6 +364,13 @@ main {
   color: #595959;
 }
 
+.texto_L_en{
+  /* margin-left: 2rem; */
+  /* position: relative; */
+  text-align: left;
+  color: #595959;
+}
+
 /* CRIANDO CLASSE PARA CENTRALIZAR FOTOS/TEXTOS/ETC. */
 .center {
     text-align: center;
