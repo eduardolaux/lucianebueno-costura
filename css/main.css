@@ -404,7 +404,11 @@ h2 {
 }
 
 h3 {
-    color:#595959;
+    color:black;
+}
+
+h4 {
+  color:#4a4a4a;
 }
 
 p {
