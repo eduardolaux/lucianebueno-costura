@@ -448,6 +448,18 @@ img {
   height: 260px;
 }
 
+.imgservicos {
+  width: 95vh;
+  height: auto;
+}
+
+.imgservicos2 {
+  width: 100vh;
+  height: auto;
+  border-radius: 2px;          Estilizando bordas da imagem
+  /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.342); */
+}
+
 /* Perfil */
 .borda {
     width: 150px;
