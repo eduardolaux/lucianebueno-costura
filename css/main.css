@@ -421,6 +421,7 @@ main {
       max-width: max-content;
       position: relative;
       margin: -2rem 0 2rem -1rem;
+      text-align: center;
       padding: 2rem;
       background: rgba(white, 0.8);
   }
