@@ -400,7 +400,7 @@ main {
   }
 
 
-  @media (max-width: 650px) {
+  @media (max-width: 768px) {
 
   .texto_L{
     text-align: center;
@@ -414,11 +414,12 @@ main {
   .testeimg {
   max-width: 300px;
   height: auto;
-  }
+  margin: -2rem 3rem 1rem;
+}
 
   .par_lado {
       position: relative;
-      margin: -2rem 0 2rem 1rem;
+      margin: -2rem 0 2rem -1rem;
       padding: 2rem;
       background: rgba(white, 0.8);
   }
