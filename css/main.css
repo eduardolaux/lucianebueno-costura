@@ -108,7 +108,7 @@ a {
     background-color: var(--dark-color);
     color: var(--white-color);
     width: 50%;
-    height: 100vh;
+    height: 95vh;
     padding: 1.5rem 0;
     z-index: var(--z-fixed);
     -webkit-transition: .5s;
@@ -411,7 +411,7 @@ main {
   }
 
   .testeimg {
-  max-width: 300px;
+  max-width: 280px;
   height: auto;
   }
 
