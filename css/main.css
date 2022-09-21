@@ -357,12 +357,12 @@ main {
 
 .main_container {
   min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-  max-width: 960px;   /*Especifica largura máxima (quando o celular está deitado)*/
+  max-width:max-content;   /*Especifica largura máxima (quando o celular está deitado)*/
   margin: auto;       /*Alinha conteudo ao centro*/
   /* width: 980px; */
   /* float:left; */
   position: relative;
-  margin-top: 30px;
+  /* margin-top: 20px; */
 }
 
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
