@@ -411,9 +411,7 @@ main {
   }
 
   .testeimg {
-    text-align: center;
-  align-items: center;
-  max-width: 400px;
+  max-width: 350px;
   height: auto;
   }
 
