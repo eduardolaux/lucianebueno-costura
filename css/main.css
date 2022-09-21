@@ -414,7 +414,7 @@ main {
   .testeimg {
   max-width: 300px;
   height: auto;
-  margin: -2rem 3rem 1rem;
+  /* margin: -2rem 3rem 1rem; */
 }
 
   .par_lado {
