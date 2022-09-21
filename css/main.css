@@ -108,7 +108,7 @@ a {
     background-color: var(--dark-color);
     color: var(--white-color);
     width: 50%;
-    height: 95vh;
+    height: 90vh;
     padding: 1.5rem 0;
     z-index: var(--z-fixed);
     -webkit-transition: .5s;
@@ -357,7 +357,7 @@ main {
 
 .main_container {
   min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-  max-width: 980px;   /*Especifica largura máxima (quando o celular está deitado)*/
+  max-width: 960px;   /*Especifica largura máxima (quando o celular está deitado)*/
   margin: auto;       /*Alinha conteudo ao centro*/
   /* width: 980px; */
   /* float:left; */
@@ -411,7 +411,7 @@ main {
   }
 
   .testeimg {
-  max-width: 280px;
+  max-width: 300px;
   height: auto;
   }
 
