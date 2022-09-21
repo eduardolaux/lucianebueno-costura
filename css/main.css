@@ -418,11 +418,12 @@ main {
 }
 
   .par_lado {
-      max-width: max-content;
+    /* width: 100%; */
+    max-width: max-content;
       position: relative;
       margin: 0rem 0 -3rem -1rem;  /*distancia topo | - | distancia base | distancia esquerda*/
       text-align: center;
-      padding: 2rem;
+      /* padding: 2rem; */
       background: rgba(white, 0.8);
   }
   }
