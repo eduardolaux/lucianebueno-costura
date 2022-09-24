@@ -28,6 +28,9 @@
 }
 
 @media (max-width: 768px) {
+    .we_do {
+        margin: 0 1rem 0 1rem;  /*distancia topo | distancia direita | distancia base | distancia esquerda*/
+    }    
     .servmargem {
         margin-left: 0%;
     }
