@@ -681,6 +681,28 @@ button {
   height: 30px;
 }
 
+.voltar {
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  width: 80px;
+  height: 30px;
+  margin: 0 auto;
+  background-color: rgb(197, 197, 197);
+  /* box-shadow: 4px 5px 4px black; */
+
+}
+
+.voltar p{
+  padding: 0.2em 0.3em;
+}
+
+.voltar_p {
+  margin-left: 12px;
+  color: var(--white-color);
+}
+
 /* _______________ACESSO WHATS_________________ */
 .whatsapp-link {
     position: fixed;
