@@ -566,32 +566,30 @@ section {
 /* ___________________________________ RODAPÉ _____________________________________ */
 
 footer {
+    /* max-width:max-content;   Especifica largura máxima (quando o celular está deitado) */
+    background-color: black;
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    max-width: 840px;   /*Especifica largura máxima (quando o celular está deitado)*/
-    padding-bottom: 30px;
-    margin-top: 30px;
+    padding-bottom: 25px;
     margin: 0 auto;     /* Mantém os elementos do bloco centralizados na página*/
     position: relative;
-    /* width: 980px; */
+    /* width:max-width; */
     display: flex;      /* Para deixar um item ao lado do outro */
     justify-content: center;
 }
 
-footer a{
-    margin: 20px;       /* Espaçamento entre ícones das redes sociais*/
-    text-align: center;
-}
 
 footer p{
-    margin-top: 2px;       /* Espaçamento entre ícones das redes sociais*/
+    margin-top: 25px;       /* Espaçamento entre ícones das redes sociais*/
+    color: white;
 }
 
 .footer-2 {
-    text-align: center;
-    align-items: left;
-    /* margin-left: auto; */
-    /* margin-right: 100px; */
-    margin-bottom: 50px;
+  min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+  text-align: center;
+  align-items: left;
+  /* margin-left: auto; */
+  /* margin-right: 100px; */
+  margin-top: 70px;
 }
 
 /* ________________________________SERVIÇOS________________________________ */
