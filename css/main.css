@@ -359,6 +359,7 @@ main {
     /* float:left; */
     position: relative;
     margin-top: 100px;
+    padding-bottom: 150px;
 }
 
 .main_container {
@@ -369,6 +370,7 @@ main {
   /* float:left; */
   position: relative;
   margin-top: 30px;
+  padding-bottom: 100px;
 }
 
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
