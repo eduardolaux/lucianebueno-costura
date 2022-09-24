@@ -418,7 +418,7 @@ main {
   }
 
   .testeimg {
-  max-width: 350px;
+  max-width: 300px;
   height: auto;
 /* margin: -2rem 3rem 1rem; */
 }
@@ -427,7 +427,7 @@ main {
     /* width: 100%; */
     max-width: max-content;
       position: relative;
-      margin: 2rem 1rem 0 1rem;  /*distancia topo | distancia direita | distancia base | distancia esquerda*/
+      margin: 2rem 0 0 0;  /*distancia topo | distancia direita | distancia base | distancia esquerda*/
       text-align: center;
       /* padding: 2rem; */
       background: rgba(white, 0.8);
