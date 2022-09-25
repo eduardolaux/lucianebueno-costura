@@ -113,7 +113,7 @@ a {
     background-color: var(--dark-color);
     color: var(--white-color);
     width: 50%;
-    height: 90vh;
+    height: 100vh;
     padding: 1.5rem 0;
     z-index: var(--z-fixed);
     -webkit-transition: .5s;
@@ -176,16 +176,19 @@ a {
 }
 
 .nav__link {
+  padding: .3rem .5rem;
+  border-radius: .25rem;
   color: var(--white-color);
 }
 
 .nav__link:hover {
   color: #595959;
-  /* background-color: var(--first-color); */
+  background-color: var(--first-color);
 }
 
 .nav__social {
   padding-top: .5rem;
+  margin-bottom: 3.5rem;
 }
 
 .nav__social-icon {
@@ -307,6 +310,12 @@ a {
   .nav__link:hover {
     background-color: var(--first-color);
   }
+
+  .nav__social {
+    padding-top: .5rem;
+    margin-bottom: 0;
+  }
+  
   .active {
     background-color: var(--first-color);
     color: var(--white-color);
