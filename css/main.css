@@ -335,14 +335,6 @@ a {
     margin-right: auto;
   }
 }
-
-/* _____________________________FLEXBOX_______________________________________ */
-
-/* .mySlides {display:none;}
-
-.containercapa {
-  width: 1440px;
-} */
 /* ___________________________________________________________________________ */
 
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Slab:wght@100;200;300;400&display=swap');
@@ -396,7 +388,7 @@ main {
 
 .container_lado {
   display: grid;    /*Não permite que o texto vá pra baixo da foto*/
-  padding: 3rem;
+  padding: 1rem;
   grid-template-columns: 400px 1fr;
   gap: 5rem;
   align-items: top;
@@ -420,14 +412,14 @@ main {
   }
 
   .testeimg {
-  max-width: 300px;
+  max-width: 350px;
   height: auto;
 /* margin: -2rem 3rem 1rem; */
 }
 
   .par_lado {
     /* width: 100%; */
-    max-width: max-content;
+    /* max-width: max-content; */
       position: relative;
       /* margin: 2rem 0 0 1rem;  distancia topo | distancia direita | distancia base | distancia esquerda */
       text-align: center;
