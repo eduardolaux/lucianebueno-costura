@@ -1,0 +1,39 @@
+
+
+/* _________Disposição de fotos em série:_______ */
+.features-proj {
+    padding: 5px;
+    /* display: flex; */
+    flex-wrap: nowrap | wrap | wrap-reverse;
+    justify-content: center;
+  }
+  
+  .features-proj img {
+    /* margin: auto; */
+    height: 400px;
+  }
+
+  
+  .container_lado_projetos {
+    display: grid;    /*Não permite que o texto vá pra baixo da foto*/
+    padding: 2rem;
+    grid-template-columns: 400px 1fr;
+    /* gap: 5rem; */
+    align-items: top;
+    max-width: 1024px;
+    margin: 0 auto;
+    /* font-size: 13pt; */
+    /* font: 500 100%/1.5 system-ui; */
+    }
+  
+  @media (max-width: 768px) {
+
+    .texto_L{
+      text-align: center;
+    }
+  
+    .container_lado_projetos {
+      display: block;
+    }
+  }
+    

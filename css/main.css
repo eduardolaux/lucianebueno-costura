@@ -11,9 +11,9 @@ height: 100%;
 
 body {
     color: #0D0D0D;
-    /* background-image: linear-gradient(to bottom, white, #F2F2F2, #D9D9D9);
-    background-attachment: fixed; */
-    background-color: white;
+    background-image: linear-gradient(to bottom, white, #f9f9f9, #D9D9D9);
+    background-attachment: fixed;
+    /* background-color: white; */
     /* background: #abbaab;  fallback for old browsers
     background: -webkit-linear-gradient(to bottom, #ffffff, #abbaab);  Chrome 10-25, Safari 5.1-6
     background: linear-gradient(to bottom, #ffffff, #abbaab); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -423,6 +423,7 @@ main {
   .testeimg {
   max-width: 350px;
   height: auto;
+  margin-bottom: 20px;
 /* margin: -2rem 3rem 1rem; */
 }
 
