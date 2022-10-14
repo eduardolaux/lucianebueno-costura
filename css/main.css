@@ -360,7 +360,7 @@ main {
     /* float:left; */
     position: relative;
     margin-top: 100px;
-    padding-bottom: 150px;
+    padding-bottom: 80px;
 }
 
 .main_container {
@@ -371,7 +371,7 @@ main {
   /* float:left; */
   position: relative;
   margin-top: 30px;
-  padding-bottom: 100px;
+  padding-bottom: 30px;
 }
 
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
@@ -570,7 +570,8 @@ section {
 
 footer {
     /* max-width:max-content;   Especifica largura máxima (quando o celular está deitado) */
-    background-color: black;
+    /* background-color: black; */
+    background-color: rgb(77, 77, 77);
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
     padding-bottom: 25px;
     margin: 0 auto;     /* Mantém os elementos do bloco centralizados na página*/
