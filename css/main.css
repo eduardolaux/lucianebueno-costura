@@ -201,6 +201,16 @@ a {
   color: var(--first-color);
 }
 
+.nav__social-icon2 {
+  font-size: 1.2rem;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.nav__social-icon2:hover {
+  color: #c5c5c5;
+}
+
 /*Aparecer menu*/
 .show {
   left: 0;
@@ -584,12 +594,13 @@ footer {
 
 footer p{
     margin-top: 25px;       /* Espaçamento entre ícones das redes sociais*/
+    /* text-align: center; */
     color: white;
 }
 
 .footer-2 {
   min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-  text-align: center;
+  /* text-align: center; */
   align-items: left;
   /* margin-left: auto; */
   /* margin-right: 100px; */
