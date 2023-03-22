@@ -411,7 +411,8 @@ main {
   grid-template-columns: 400px 1fr;
   gap: 5rem;
   align-items: top;
-  max-width: 1024px;
+  max-width: 1124px;
+  /* max-width: 1920px */
   margin: 0 auto;
   /* font-size: 13pt; */
   /* font: 500 100%/1.5 system-ui; */
@@ -431,8 +432,9 @@ main {
   }
 
   .testeimg {
-  max-width: 350px;
+  max-width: 450px;
   height: auto;
+  margin-top: 30px
   margin-bottom: 20px;
 /* margin: -2rem 3rem 1rem; */
 }
@@ -441,7 +443,7 @@ main {
     /* width: 100%; */
     /* max-width: max-content; */
       position: relative;
-      /* margin: 2rem 0 0 1rem;  distancia topo | distancia direita | distancia base | distancia esquerda */
+      /* margin: 2rem 0 0 1rem;  +distancia topo | distancia direita | distancia base | distancia esquerda */
       text-align: center;
       /* padding: 2rem; */
       background: rgba(white, 0.8);
@@ -734,4 +736,9 @@ button {
 
 .fa-whatsapp {
     margin-top: 16px;
+}
+
+.sembotao {
+/* display: block; */
+background: transparent;
 }
