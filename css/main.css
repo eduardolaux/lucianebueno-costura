@@ -21,6 +21,7 @@ body {
             font-family: 'Poppins', sans-serif;
 }
 
+
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
@@ -382,6 +383,10 @@ main {
   position: relative;
   margin-top: 30px;
   padding-bottom: 30px;
+}
+
+.montserrat {
+font-family: 'Montserrat', sans-serif;
 }
 
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
