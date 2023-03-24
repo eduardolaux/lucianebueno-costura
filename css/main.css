@@ -367,7 +367,7 @@ main {
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
     max-width: 1024px;   /*Especifica largura máxima (quando o celular está deitado)*/
     margin: auto;       /*Alinha conteudo ao centro*/
-    /* width: 980px; */
+    width: 90%;
     /* float:left; */
     position: relative;
     margin-top: 100px;
@@ -416,6 +416,7 @@ font-family: 'Montserrat', sans-serif;
   grid-template-columns: 400px 1fr;
   gap: 5rem;
   align-items: top;
+  width: 90%;         /* Limita o espaço horizontal que o conteúdo irá ocupar até o max-width */
   max-width: 1124px;
   /* max-width: 1920px */
   margin: 0 auto;
@@ -437,7 +438,7 @@ font-family: 'Montserrat', sans-serif;
   }
 
   .testeimg {
-  max-width: 450px;
+  max-width: 350px;
   height: auto;
   margin-top: 30px
   margin-bottom: 20px;
