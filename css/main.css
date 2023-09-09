@@ -121,7 +121,9 @@ a {
 .header__toggle {
   font-size: 3rem;
   cursor: pointer;
-  color: #090348;
+  /* color: #090348; */
+  color:#4E54B2;
+  /* color: #4E54B2; */
 }
 
 /*===== ______________________NAV BAR__________________________ =====*/
@@ -519,21 +521,24 @@ color: black;
 h1 {
     font-size: 3.6rem;
     /* color:black; */
-    color:#090348;
+    /* color:#090348; */
+    color:#4E54B2;
     padding: 1rem;
   }
 
 h2 {
     padding: 2rem;
     font-size: 2.8rem;
-    color:#090348;
+    /* color:#090348; */
+    color:#4E54B2;
     /* color:black; */
 }
 
 h3 {
   padding-top: 2rem;
   font-size: 2.2rem;
-  color:black;
+  color:#4E54B2;
+  /* color:black; */
 }
 
 h4 {
