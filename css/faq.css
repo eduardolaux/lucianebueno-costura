@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Muli:wght@400;500&display=swap");
 
-/* body {
-  font-family: "Baloo Bhai 2", cursive;
-  background-color: #eeeeee;
-} */
-
 .containerFluid {
   max-width: 102.4rem;
   margin: 0 auto;
@@ -13,22 +8,6 @@
     text-align: center;
 }
 
-/* .containerFluid h2 {
-  color: hotpink;
-  position: relative;
-  width: 24rem;
-} */
-
-/* .containerFluid h2::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  right: 12px;
-  width: 67px;
-  height: 2px;
-  background-color: hotpink;
-} */
-
 .accordion {
   width: 100%;
   padding: 0 5px;
@@ -36,7 +15,7 @@
   cursor: pointer;
   border-radius: 50px;
   display: flex;
-  margin: 10px 0;
+  margin: 5px 0;
   align-items: center;
 }
 
@@ -44,8 +23,10 @@
   margin: 0 10px 0 0;
   width: 30px;
   height: 30px;
-  background: url(https://raw.githubusercontent.com/Tusar78/responsive-accordion/main/images/toggle-bg.png)
-    no-repeat 8px 7px #595959;
+  /* background: url(https://raw.githubusercontent.com/Tusar78/responsive-accordion/main/images/toggle-bg.png)
+    no-repeat 8px 7px #595959; */
+    background: url(https://raw.githubusercontent.com/Tusar78/responsive-accordion/main/images/toggle-bg.png)
+      no-repeat 8px 7px #090348;
   border-radius: 50%;
   float: left;
   transition: all 0.5s ease-in;

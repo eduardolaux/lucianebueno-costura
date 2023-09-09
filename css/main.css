@@ -33,16 +33,29 @@ body {
 
 
 /*===== VARIABLES CSS =====*/
+
+
+/* Cores da paleta logo:
+Azul marinho: #090348
+Azul claro:   #4e54b2
+#4F0348#0D046ERoxo claro:   #cca4d2
+Amarelo:      #f2d89b
+*/
+
 :root {
   --header-height: 4.5rem;
   
   /*===== Colores =====*/
-  --first-color: #c5c5c5;
+  /* --first-color: #c5c5c5; */
+  /* --first-color: #0D046E; */
+  --first-color: #4E54B2;
   --dark-color: white;
-  /* --dark-color: #4e55b26a; */
+  /* --dark-color: #090348; */
   --dark-color-alt: white;
-  /* --dark-color-alt: #4e55b26a; */
-  --white-color: #313030;
+  /* --dark-color-alt: #560349; */
+  /* --white-color: #313030; */
+  --white-color: #090348;
+ 
 
   /*===== z index =====*/
   --z-fixed: 100;
@@ -98,6 +111,7 @@ a {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0.2rem 0.4rem rgb(86, 3, 73); */
 }
 
 /* .header__logo {
@@ -105,8 +119,9 @@ a {
 } */
 
 .header__toggle {
-  font-size: 2.5rem;
+  font-size: 3rem;
   cursor: pointer;
+  color: #090348;
 }
 
 /*===== ______________________NAV BAR__________________________ =====*/
@@ -186,8 +201,15 @@ a {
   color: var(--white-color);
 }
 
+/* Cores da paleta logo:
+Azul marinho: #090348
+Azul claro:   #4e54b2
+Roxo claro:   #cca4d2
+Amarelo:      #f2d89b
+*/
 .nav__link:hover {
-  color: #595959;
+  /* color: #595959; */
+  color: white;
   background-color: var(--first-color);
 }
 
@@ -214,6 +236,7 @@ a {
 
 .nav__social-icon2:hover {
   color: #c5c5c5;
+  /* color: #560349 */
 }
 
 /*Aparecer menu*/
@@ -223,7 +246,8 @@ a {
 
 /*Active menu*/
 .active {
-  color: #595959;
+  /* color: #595959; */
+  color: white
 }
 
 /*=== Dropdown ===*/
@@ -335,6 +359,7 @@ a {
   .active {
     background-color: var(--first-color);
     color: var(--white-color);
+    color: white
   }
 
 .dropdown {
@@ -493,19 +518,16 @@ color: black;
 
 h1 {
     font-size: 3.6rem;
-    color:black;
+    /* color:black; */
+    color:#090348;
     padding: 1rem;
   }
 
 h2 {
-<<<<<<< HEAD
-    /* text-transform: uppercase;     */
-    /* color:#595959; */
-=======
     padding: 2rem;
     font-size: 2.8rem;
->>>>>>> 7d737af (página reformatada!)
-    color:black;
+    color:#090348;
+    /* color:black; */
 }
 
 h3 {
@@ -602,7 +624,8 @@ section {
 footer {
     /* max-width:max-content;   Especifica largura máxima (quando o celular está deitado) */
     /* background-color: black; */
-    background-color: rgb(77, 77, 77);
+    /* background-color: rgb(77, 77, 77); */
+    background-color: #090348;
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
     padding-bottom: 25px;
     margin: 0 auto;     /* Mantém os elementos do bloco centralizados na página*/
