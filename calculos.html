@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="w-2/3 m-auto">
+        <div class="flex flex-col p-4 gap-2 mb-8">
+            <p class="text-center font-bold">Faça upload de um arquivo com os materiais de acordo com o template fornecido.</p>
+            <a href="./sheets/materiais.csv" target="_blank" class="text-center font-bold p-4 bg-blue-300 rounded m-auto" rel="noopener noreferrer">Download Arquivo de Exemplo</a>
+            <input type="file" name="file" id="file">
+        </div>
+        <div class="flex flex-col p-4 gap-2 mb-8">
+            <div class="flex gap-2">
+                <label for="">Nome</label>
+                <input type="text" class="border border-black rounded grow px-4" id="name">
+            </div>
+            <button class="bg-blue-400 rounded p-2" type="button" onclick="addDimension()">
+                Adicionar Dimensão
+            </button>
+        </div>
+        <div id="dimensions">
+        </div>
+        <div class="py-16">
+            <button class="w-full rounded bg-green-500 p-2" onclick="calculate()">Calcular Dimensões</button>
+        </div>
+        <div class="pb-16">
+            <p class="text-center font-bold">Resultados</p>
+            <div class="relative overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-8">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Dimensão
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Área Total
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                63 Hz
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                125 Hz
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                250 Hz
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                500 Hz
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                1000 Hz
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                2000 Hz
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                4000 Hz
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                8000 Hz
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            const fileInput = document.getElementById('file')
+            let columns = [];
+            const readFile = () => {
+                const reader = new FileReader()
+                reader.onload = () => {
+                    columns = []
+                    lines = (reader.result).split('\n')
+                    for (let i = 0; i < lines.length; i++) {
+                        const line = lines[i]
+                        columns.push(parseCSVLine(line))
+                    }
+                
+                }
+                reader.readAsText(fileInput.files[0])
+            }            
+
+            fileInput.addEventListener('change', readFile)
+
+            function parseCSVLine(line) {
+            const columns = []
+            let currentColumn = ''
+            let insideQuotes = false
+
+            for (let i = 0; i < line.length; i++) {
+            const char = line[i]
+
+            if (char === '"' && line[i - 1] !== '\\') {
+                insideQuotes = !insideQuotes
+            } else if (char === ',' && !insideQuotes) {
+                columns.push(currentColumn.trim())
+                currentColumn = ''
+            } else {
+                currentColumn += char
+            }
+            }
+
+            columns.push(currentColumn.trim())
+
+            return columns
+        }
+
+        function addDimension() {
+            const name = document.getElementById('name').value;
+            let htmlTemplate = `
+            <div>
+                <div class="flex justify-between">
+                    <p class="font-bold">#Dimensão - ${name}</p>
+                    <button onclick="this.parentElement.parentElement.remove()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="flex justify-end pt-4">
+                        <button class="bg-gray-400 rounded p-2 mt-2 justify-self-end" onClick="addMaterial(this)">Adicionar Novo Material</button>
+                    </div>
+                </div>
+                <hr class="my-4">
+            </div>
+            `;
+
+            document.getElementById('dimensions').insertAdjacentHTML('beforeend', htmlTemplate);
+
+        }
+
+    function addMaterial(dimension) {
+        let items = columns.reduce((accumulator, currentValue, index) => {
+            return accumulator+`<option value="${index}">${currentValue[0]}</option>`
+        }, "")
+
+        let htmlTemplate = `
+            <div class="flex gap-2">
+                <select name="" id="" class="w-full rounded border border-black">
+                    ${items}
+                </select>
+                <input type="number" placeholder="Informe a área em m²" min="0" step="0.01" class="rounded border border-black px-4" required>
+                <button onclick="this.parentElement.remove()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg>
+                </button>                
+            </div>
+        `
+
+        dimension.parentElement.parentElement.insertAdjacentHTML('beforeend', htmlTemplate);
+    }
+
+    function calculate() {
+        let dimensionsNode = document.getElementById("dimensions");
+        let dimensionChildren = dimensionsNode.children;
+        let finalDimensionData = [];
+
+        for (dimensionChild of dimensionChildren) {
+            let dimensionName = dimensionChild.children[0].children[0].innerHTML.substring(12);
+            let buttonPlusMaterial = dimensionChild.children[1]
+            let area = 0
+            let coeficientesAndAreas = []
+            for (let cont = 1; cont < buttonPlusMaterial.children.length; cont++) {
+                let selectedOptionId = buttonPlusMaterial.children[cont].children[0].value;
+                let inputArea = parseFloat(buttonPlusMaterial.children[cont].children[1].value);
+
+                area+= inputArea
+                coeficientesAndAreas.push([calculaCoeficienteMaterial(selectedOptionId), inputArea])
+            }
+
+            finalDimensionData.push([dimensionName, area, dimensionLossTransmition(coeficientesAndAreas, area)])
+
+        }
+
+        printTable(finalDimensionData)
+    }
+
+    function calculaCoeficienteMaterial(materialId) {
+
+        let material = columns[materialId];
+
+        let coeficientes = [
+            10**(-parseFloat(material[3])/10),
+            10**(-parseFloat(material[4])/10),
+            10**(-parseFloat(material[5])/10),
+            10**(-parseFloat(material[6])/10),
+            10**(-parseFloat(material[7])/10),
+            10**(-parseFloat(material[8])/10),
+            10**(-parseFloat(material[9])/10),
+            10**(-parseFloat(material[10])/10)
+        ];
+
+        return coeficientes
+
+    }
+
+    function dimensionLossTransmition(coeficientesAndAreas, totalArea) {
+    
+        let length = coeficientesAndAreas.length
+        let results = [0,0,0,0,0,0,0,0];
+
+        for (let cont = 0; cont < length; cont++) {
+
+            results[0] += coeficientesAndAreas[cont][0][0]*coeficientesAndAreas[cont][1]
+            results[1] += coeficientesAndAreas[cont][0][1]*coeficientesAndAreas[cont][1]
+            results[2] += coeficientesAndAreas[cont][0][2]*coeficientesAndAreas[cont][1]
+            results[3] += coeficientesAndAreas[cont][0][3]*coeficientesAndAreas[cont][1]
+            results[4] += coeficientesAndAreas[cont][0][4]*coeficientesAndAreas[cont][1]
+            results[5] += coeficientesAndAreas[cont][0][5]*coeficientesAndAreas[cont][1]
+            results[6] += coeficientesAndAreas[cont][0][6]*coeficientesAndAreas[cont][1]
+            results[7] += coeficientesAndAreas[cont][0][7]*coeficientesAndAreas[cont][1]
+        }
+
+        let values = results.map(function(elemento){ return (10*Math.log10(1 / (elemento / totalArea))).toFixed(2) })
+
+        return values
+
+    }
+
+    function printTable(data) {
+        let tableBody = document.getElementById("table")
+        tableBody.innerHTML = ""
+        let template = ""
+
+        data.forEach(element => {
+            template += `
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    ${element[0]}
+                </th>
+                <td class="px-6 py-4">
+                    ${element[1]} m²
+                </td>
+                <td class="px-6 py-4">
+                    ${element[2][0]}
+                </td>
+                <td class="px-6 py-4">
+                    ${element[2][1]}
+                </td>
+                <td class="px-6 py-4">
+                    ${element[2][2]}
+                </td>
+                <td class="px-6 py-4">
+                    ${element[2][3]}
+                </td>
+                <td class="px-6 py-4">
+                    ${element[2][4]}
+                </td>
+                <td class="px-6 py-4">
+                    ${element[2][5]}
+                </td>
+                <td class="px-6 py-4">
+                    ${element[2][6]}
+                </td>
+                <td class="px-6 py-4">
+                    ${element[2][7]}
+                </td>
+            </tr>
+            `
+        })
+
+        tableBody.innerHTML = template
+
+    }
+        </script>
+    </body>
+</html>

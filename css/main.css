@@ -4,41 +4,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 /* Configuração global: */
-/* *{
-height: 100%;
-} */
-
-body {
-    color: #0D0D0D;
-    background-image: linear-gradient(to bottom, white, #f9f9f9, #D9D9D9);
-    background-attachment: fixed;
-    /* background-color: white; */
-    /* background: #abbaab;  fallback for old browsers
-    background: -webkit-linear-gradient(to bottom, #ffffff, #abbaab);  Chrome 10-25, Safari 5.1-6
-    background: linear-gradient(to bottom, #ffffff, #abbaab); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            /* font-family: 'Catamaran', sans-serif; */
-            font-family: 'Poppins', sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
 }
-
 
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
+html {
+    font-size: 62.5%;    /* a cada 1rem será considerado 10px */
+}
+
+body {
+    color: #0D0D0D;
+    /* background-image: linear-gradient(to bottom, white, #f9f9f9, #D9D9D9); */
+    /* background-image: linear-gradient(to bottom, #09034859, #4e55b248, #cca4d272, #f2d89b5d); */
+    background-attachment: fixed;
+    background-color: white;
+            font-family: 'Poppins', sans-serif;
+}
+
+
 /*===== VARIABLES CSS =====*/
 :root {
-  --header-height: 2.5rem;
+  --header-height: 4.5rem;
   
   /*===== Colores =====*/
   --first-color: #c5c5c5;
   --dark-color: white;
+  /* --dark-color: #4e55b26a; */
   --dark-color-alt: white;
+  /* --dark-color-alt: #4e55b26a; */
   --white-color: #313030;
-
-  /*===== Fuente y tipografia =====*/
-  --body-font: 'Poppins', sans-serif;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
 
   /*===== z index =====*/
   --z-fixed: 100;
@@ -71,7 +75,7 @@ a {
 }
 
 .bd-grid {
-  max-width: 1024px;
+  max-width: 102.4rem;
   display: grid;
   -ms-grid-columns: 100%;
   grid-template-columns: 100%;
@@ -93,7 +97,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
 }
 
 /* .header__logo {
@@ -101,7 +105,7 @@ a {
 } */
 
 .header__toggle {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 
@@ -173,7 +177,7 @@ a {
 }
 
 .nav__item {
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 .nav__link {
@@ -193,7 +197,7 @@ a {
 }
 
 .nav__social-icon {
-  font-size: 1.2rem;
+  font-size: 2.5rem;
   color: var(--white-color);
   margin-right: 1rem;
 }
@@ -230,8 +234,9 @@ a {
   cursor: default;
 }
 
+/* Ícone flechinha do dropdown */
 .dropdown__icon {
-  font-size: 1.3rem;
+  font-size: 2rem;
   transition: .5s;
 }
 
@@ -312,11 +317,11 @@ a {
     align-items: center;
   }
   .nav__item {
-    margin: 0 .25rem;
+    margin: 0 1rem;
   }
   .nav__link {
-    padding: .3rem .8rem;
-    border-radius: .25rem;
+    padding: .3rem 1rem;
+    border-radius: .5rem;
   }
   .nav__link:hover {
     background-color: var(--first-color);
@@ -339,9 +344,7 @@ a {
   background-color: white;
   position: fixed;
   margin: 0;
-  /* top: calc(var(--header-height) + 0.3rem); */
   padding: .5rem 1.5rem;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   border-radius: .5rem;
 }
 .dropdown__item {
@@ -363,156 +366,169 @@ a {
 
 
 main {
-    /* padding: 20px; */
-    min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-    max-width: 1024px;   /*Especifica largura máxima (quando o celular está deitado)*/
+    min-width: 32rem;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+    max-width: 102.4rem;   /*Especifica largura máxima (quando o celular está deitado)*/
     margin: auto;       /*Alinha conteudo ao centro*/
     width: 90%;
     /* float:left; */
     position: relative;
-    margin-top: 100px;
-    padding-bottom: 80px;
+    margin-top: 6rem;
+    padding-bottom: 8rem;
 }
 
 .main_container {
-  min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
-  max-width: 1024px;   /*Especifica largura máxima (quando o celular está deitado)*/
+  min-width: 32rem;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
+  max-width: 120rem;   /*Especifica largura máxima (quando o celular está deitado)*/
   margin: auto;       /*Alinha conteudo ao centro*/
   /* width: 980px; */
   /* float:left; */
   position: relative;
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-.montserrat {
-font-family: 'Montserrat', sans-serif;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
 
 .tamlogo {
-    width: 200px;
+    width:20rem;
     height: auto;
+}
+
+/*_______________________ SOBRE MIM - HOMEPAGE ______________________*/
+
+.container_homepage {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0 auto;
+  width: 90%;
+  max-width: 110rem;
+
+   /* display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; */
+}
+
+.container_homepage h1 {
+  margin-bottom: 1.6rem;
+}
+
+.text-box h1 {
+  /* font-family: 'Bebas Neue', cursive; */
+  /* text-transform: uppercase; */
+}
+
+.config_foto_homepage {
+  float: left;
+  /* border: 1px solid #595959; */
+  /* border-radius: 10px; */
+  width: 36rem;
+  height: auto;
+  margin-right: 4rem;
+}
+
+.text-box p {
+  text-align: justify;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+@media (max-width:768px) {
+  .container_homepage {
+      flex-direction: column;
+      text-align: center;
+}
+  .config_foto_homepage {
+    margin: 0 auto;
+    float: none;
+    max-width: 36rem;
+  }
+
+  /* .text-box p {
+    text-align: center;
+  } */
+
 }
 
 /* ______________________ TEXTOS ________________________________ */
 
-
-#fonte{
-  font-size: 14pt;
-}
-
-.texto_L{
-  /* margin-left: 23rem; */
-  /* position: relative; */
-  text-align: left;
-  color: #595959;
-}
-
-.container_lado {
-  display: grid;    /*Não permite que o texto vá pra baixo da foto*/
-  padding: 1rem;
-  grid-template-columns: 400px 1fr;
-  gap: 5rem;
-  align-items: top;
-  width: 90%;         /* Limita o espaço horizontal que o conteúdo irá ocupar até o max-width */
-  max-width: 1124px;
-  /* max-width: 1920px */
-  margin: 0 auto;
-  /* font-size: 13pt; */
-  /* font: 500 100%/1.5 system-ui; */
-  }
-
-
-  @media (max-width: 768px) {
-
-  .texto_L{
-    text-align: center;
-  }
-
-  .container_lado {
-    /* grid-template-columns: block; */
-    display: block;
-      /* font-size: 80%; */
-  }
-
-  .testeimg {
-  max-width: 350px;
-  height: auto;
-  margin-top: 30px
-  margin-bottom: 20px;
-/* margin: -2rem 3rem 1rem; */
-}
-
-  .par_lado {
-    /* width: 100%; */
-    /* max-width: max-content; */
-      position: relative;
-      /* margin: 2rem 0 0 1rem;  +distancia topo | distancia direita | distancia base | distancia esquerda */
-      text-align: center;
-      /* padding: 2rem; */
-      background: rgba(white, 0.8);
-  }
-  }
-
-.texto_L_en{
-  /* margin-left: 2rem; */
-  /* position: relative; */
-  text-align: left;
-  /* color: #595959; */
-  color: #313131;
-}
-
-.espaco{
-  margin-top: 50px;
-}
-
 /* CRIANDO CLASSE PARA CENTRALIZAR FOTOS/TEXTOS/ETC. */
 .center {
     text-align: center;
+    font-size: 1.6rem;
     /* text-align-last: center; */
     /* align-items: center; */
 }   
 
 .center p {
     text-align: justify;
+}
 
+.li_texto{
+  font-size: 1.6rem;
+  margin-left: 3rem;
+  /* position: relative; */
+  text-align: left;
 }
-/* CRIANDO CLASSE PARA CENTRALIZAR À DIREITA FOTOS/TEXTOS/ETC. */
-.direita {
-    text-align: right;
-    /* align-items: right; */
+
+.li_texto_ol{
+  font-size: 1.6rem;
+  margin-left: 5rem;
+  text-align: left;
 }
+
 .cornome {
 /* color: #069656; */
-color: #590202
+color: black;
 }
 
+/* FONTES */
+
+/* Tamanho de fonte:
+1px = 0.75pt
+16px = 12pt */
+
 h1 {
-    text-transform: uppercase;    
+    font-size: 3.6rem;
     color:black;
+    padding: 1rem;
+  }
+
+.espaço{
+  margin-bottom: 1.6rem  
 }
 
 h2 {
+<<<<<<< HEAD
     /* text-transform: uppercase;     */
     /* color:#595959; */
+=======
+    padding: 2rem;
+    font-size: 2.8rem;
+>>>>>>> 7d737af (página reformatada!)
     color:black;
 }
 
 h3 {
-    color:black;
+  padding-top: 2rem;
+  font-size: 2.2rem;
+  color:black;
 }
 
 h4 {
-  color:#4a4a4a;
+  padding-bottom: 2rem;
+  font-size: 1.8rem;
 }
 
 p {
-    /* text-indent: 20px; */
-    color: #313131;
-    /* color:black; */
+    font-size: 1.6rem;
+    color: black;
+    padding: 1rem
 }
+
 /* ______________________DESCONHECIDO______________________ */
 
 .coluna {
@@ -548,6 +564,7 @@ vertical-align: "middle";
   /* display: flex; */
   flex-wrap: nowrap | wrap | wrap-reverse;
   justify-content: center;
+  width: 100%;
 }
 
 .features img {
@@ -644,13 +661,14 @@ background-color: red;
 
 .form {
     width: 100%;
-    max-width: 32rem;
+    max-width: 52rem;
     margin: 0 auto;
 }
 
 .form label,
 .form input,
 .form textarea {
+    font-size: 1.4rem;
     display: block;
     width: 100%;
 }
@@ -663,10 +681,11 @@ background-color: red;
 }
 
 .form button {
+    font-size: 16px;
     display: block;
     background: #0072c4;
     color: #fff;
-    font: inherit;
+    /* font: inherit; */
     text-transform: uppercase;
     border: none;
     border-radius: 8px;
