@@ -439,6 +439,7 @@ main {
 .config_foto_homepage {
   float: left;
   width: 36rem;
+  /* width: 40rem; */
   height: auto;
   margin-right: 4rem;
 }

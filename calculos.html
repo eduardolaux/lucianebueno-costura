@@ -1,277 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="w-2/3 m-auto">
-        <div class="flex flex-col p-4 gap-2 mb-8">
-            <p class="text-center font-bold">Faça upload de um arquivo com os materiais de acordo com o template fornecido.</p>
-            <a href="./sheets/materiais.csv" target="_blank" class="text-center font-bold p-4 bg-blue-300 rounded m-auto" rel="noopener noreferrer">Download Arquivo de Exemplo</a>
-            <input type="file" name="file" id="file">
-        </div>
-        <div class="flex flex-col p-4 gap-2 mb-8">
-            <div class="flex gap-2">
-                <label for="">Nome</label>
-                <input type="text" class="border border-black rounded grow px-4" id="name">
-            </div>
-            <button class="bg-blue-400 rounded p-2" type="button" onclick="addDimension()">
-                Adicionar Dimensão
-            </button>
-        </div>
-        <div id="dimensions">
-        </div>
-        <div class="py-16">
-            <button class="w-full rounded bg-green-500 p-2" onclick="calculate()">Calcular Dimensões</button>
-        </div>
-        <div class="pb-16">
-            <p class="text-center font-bold">Resultados</p>
-            <div class="relative overflow-x-auto">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-8">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Dimensão
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Área Total
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                63 Hz
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                125 Hz
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                250 Hz
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                500 Hz
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                1000 Hz
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                2000 Hz
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                4000 Hz
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                8000 Hz
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="table">
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <script>
-            const fileInput = document.getElementById('file')
-            let columns = [];
-            const readFile = () => {
-                const reader = new FileReader()
-                reader.onload = () => {
-                    columns = []
-                    lines = (reader.result).split('\n')
-                    for (let i = 0; i < lines.length; i++) {
-                        const line = lines[i]
-                        columns.push(parseCSVLine(line))
-                    }
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10954570633"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'AW-10954570633');
+    </script>
+
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eduardo Laux, Engenheiro Acústico">
+    <meta name="keywords" content="acústica, engenharia acústica, projeto acústico, consultoria, acústica residencial, soluções acústicas, materiais acústicos, empresas de acústica, isolamento acústico, tratamento acústico, laudo, projeto, absorção sonora">
+    <meta name="robots" content="index, follow">
+    <meta charset="utf-8">
+        
+    <script src="https://cdn.tailwindcss.com"></script>
+       
+    <link rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Para mostrar descrição prévia em link de compartilhamento whatsapp -->
+    <meta property="og:description" content="Maior conforto acústico para o seu ambiente" />
+    <!-- Para mostrar imagem prévia em link de compartilhamento whatsapp -->
+    <meta property="og:image" itemprop="image"
+    content="https://eduardolaux.github.io/engenharia-acustica/img/logo_icon32x32.png">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/png">
+
+    
+    <title>Eng. Eduardo Laux - Projetos e laudos de acústica</title>
+
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+</head>
+<!-- __________________________________BARRA DE MENU___________________________________________ -->
+<header class="header">
+    <a href="index.html" class="header__logo"><img class="tamlogo" src ="./img/logo.png" /></a>
+
+    <i class='bx bx-menu header__toggle' id="header-toggle"></i>
+
+    <nav class="nav" id="nav-menu">
+        <div class="nav__content bd-grid">
+            <div class="nav__perfil">
+                <div class="nav__img">
+                    <img src="./img/logo_simbolo3.png" alt="">
+                </div>
                 
+                <div>
+                    <a href="#" class="nav__name">Eduardo Laux</a>
+                    <span class="nav__profesion">Soluções Acústicas</span>
+                </div>
+            </div>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">início</a></li>
+                    <li class="nav__item"><a href="projetosrealizados.html" class="nav__link active">projetos</a></li>
+
+
+                    <li class="nav__item dropdown">
+                        <a href="" class="nav__link dropdown__link">acústica <i class='bx bx-chevron-down dropdown__icon'></i></a>
+
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__item"><a href="sobre.html" class="nav__link">sobre</a></li>
+                            <li class="dropdown__item"><a href="calculos.html" class="nav__link">cálculos</a></li>
+                            <li class="dropdown__item"><a href="escritorios.html" class="nav__link">escritórios</a></li>
+                            <li class="dropdown__item"><a href="restaurantes.html" class="nav__link">restaurantes</a></li>
+                            <li class="dropdown__item"><a href="auditorios.html" class="nav__link">auditórios</a></li>
+                            <!-- <li class="dropdown__item"><a href="escolas.html" class="nav__link">Escolas</a></li>
+                            <li class="dropdown__item"><a href="igrejas.html" class="nav__link">Igrejas</a></li>
+                            <li class="dropdown__item"><a href="estudios.html" class="nav__link">Estúdios</a></li> -->
+                        </ul>
+
+                    </li>
+                    <!-- <li class="nav__item"><a href="#" class="nav__link">Portfolio</a></li> -->
+                    <li class="nav__item"><a href="contato.html" class="nav__link">contato</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__social">
+                <a href="https://www.linkedin.com/in/eduardo-laux-159835117/" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://www.instagram.com/eng.eduardolaux/" class="nav__social-icon"><ion-icon name="logo-instagram"></ion-icon></a>
+                <!-- <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a> -->
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="script.js"></script>
+
+<!-- _______________________ CÁLCULOS ____________________ -->
+
+    <!-- <main> -->
+        <!-- <div class="center"> -->
+            <!-- <h2>Perda de transmissão sonora</h2> -->
+            <!-- <p>Faça upload de um arquivo com os materiais de acordo com o template fornecido.</p> -->
+
+<body class="w-2/3 m-auto">                
+<div class="flex flex-col p-4 gap-2 mb-8">
+                <br></br>
+                <br></br>
+                <!-- PASSO 1 -->
+                <p class="text-center font-bold">Passo 1</p>
+                Para o cálculo de perda de transmissão de uma divisória desejada, primeiro instale o arquivo que contém o banco de dados de perda de transmissão dos mateirias, clicando no ícone abaixo:<a href="./sheets/materiais.csv" target="_blank" class="text-center font-bold p-4 bg-blue-300 rounded m-auto" rel="noopener noreferrer">Download Arquivo de Exemplo</a>
+
+                <!-- PASSO 2 -->
+                <p class="text-center font-bold">Passo 2</p>
+                Após isso, acesse o arquivo na pasta do seu computador/dispositivo em que foi instalado, clicando no ícone abaixo:
+                    <input type="file" name="file" id="file">
+
+                <!-- PASSO 3 -->
+                <p class="text-center font-bold">Passo 3</p>
+                Agora, você irá estimar a perda de transmissão sonora associada à uma divisória desejada. 
+                <br></br>                
+                <strong>Passo 3.1:</strong>
+                Primeiro, nomeie a dimensão (Por exemplo: "Parede esquerda", "Parede direita", "Teto", "Piso") correspondente à superfície desejada para o dimensionamento em sua estimativa construtiva de isolamento acústico. Então, clique em adicionar dimensão.
+                <strong>Passo 3.2:</strong>
+                Agora, clique em "Adicionar Novo Material". Em "Descrição" selecione o material desejado para compor a superfície. Em "Área", digite a área que esse material irá ocupar na superfície em questão. Antes de começar, leia as seguintes observações.
+               <br></br>
+                Observação 1: Se você adicionar somente 1 material à dimensão declarada, o cálculo considerará a superfície estimada como uma superfície única. Se adicionar outro material a ela, o cálculo considerará a perda de transmissão composta pelo material 1 e pelo material 2. E assim por diante.
+                <br></br>
+                Observação 2: A área declarada irá influenciar significativamente na perda de transmissão da estrutura a ser projetada. Varie as relações de área entre as dimensões consideradas no projeto para compreender melhor essas relações.
+                <br></br>
+                Assim que concluído, clique em "Calcular Dimensões". O nível de pressão sonora resultante, em escala Decibel (dB) será apresentado em bandas de frequência, em Hertz (Hz).
+            </div>
+            <div class="flex flex-col p-4 gap-2 mb-8">
+                <div class="flex gap-2">
+                    <label for="">Nome</label>
+                    <input type="text" class="border border-black rounded grow px-4" id="name">
+                </div>
+                <button class="bg-blue-400 rounded p-2" type="button" onclick="addDimension()">
+                    Adicionar Dimensão
+                </button>
+            </div>
+            <div id="dimensions">
+            </div>
+            <div class="py-16">
+                <button class="w-full rounded bg-green-500 p-2" onclick="calculate()">Calcular Dimensões</button>
+            </div>
+            <div class="pb-16">
+                <p class="text-center font-bold">Resultados</p>
+                <div class="relative overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-8">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Dimensão
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Área Total
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    63 Hz
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    125 Hz
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    250 Hz
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    500 Hz
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    1000 Hz
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    2000 Hz
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    4000 Hz
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    8000 Hz
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <script>
+                const fileInput = document.getElementById('file')
+                let columns = [];
+                const readFile = () => {
+                    const reader = new FileReader()
+                    reader.onload = () => {
+                        columns = []
+                        lines = (reader.result).split('\n')
+                        for (let i = 0; i < lines.length; i++) {
+                            const line = lines[i]
+                            columns.push(parseCSVLine(line))
+                        }
+                    
+                    }
+                    reader.readAsText(fileInput.files[0])
+                }            
+
+                fileInput.addEventListener('change', readFile)
+
+                function parseCSVLine(line) {
+                const columns = []
+                let currentColumn = ''
+                let insideQuotes = false
+
+                for (let i = 0; i < line.length; i++) {
+                const char = line[i]
+
+                if (char === '"' && line[i - 1] !== '\\') {
+                    insideQuotes = !insideQuotes
+                } else if (char === ',' && !insideQuotes) {
+                    columns.push(currentColumn.trim())
+                    currentColumn = ''
+                } else {
+                    currentColumn += char
                 }
-                reader.readAsText(fileInput.files[0])
-            }            
+                }
 
-            fileInput.addEventListener('change', readFile)
-
-            function parseCSVLine(line) {
-            const columns = []
-            let currentColumn = ''
-            let insideQuotes = false
-
-            for (let i = 0; i < line.length; i++) {
-            const char = line[i]
-
-            if (char === '"' && line[i - 1] !== '\\') {
-                insideQuotes = !insideQuotes
-            } else if (char === ',' && !insideQuotes) {
                 columns.push(currentColumn.trim())
-                currentColumn = ''
-            } else {
-                currentColumn += char
-            }
+
+                return columns
             }
 
-            columns.push(currentColumn.trim())
+            function addDimension() {
+                const name = document.getElementById('name').value;
+                let htmlTemplate = `
+                <div>
+                    <div class="flex justify-between">
+                        <p class="font-bold">#Dimensão - ${name}</p>
+                        <button onclick="this.parentElement.parentElement.remove()">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex justify-end pt-4">
+                            <button class="bg-gray-400 rounded p-2 mt-2 justify-self-end" onClick="addMaterial(this)">Adicionar Novo Material</button>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                </div>
+                `;
 
-            return columns
-        }
+                document.getElementById('dimensions').insertAdjacentHTML('beforeend', htmlTemplate);
 
-        function addDimension() {
-            const name = document.getElementById('name').value;
+            }
+
+        function addMaterial(dimension) {
+            let items = columns.reduce((accumulator, currentValue, index) => {
+                return accumulator+`<option value="${index}">${currentValue[0]}</option>`
+            }, "")
+
             let htmlTemplate = `
-            <div>
-                <div class="flex justify-between">
-                    <p class="font-bold">#Dimensão - ${name}</p>
-                    <button onclick="this.parentElement.parentElement.remove()">
+                <div class="flex gap-2">
+                    <select name="" id="" class="w-full rounded border border-black">
+                        ${items}
+                    </select>
+                    <input type="number" placeholder="Informe a área em m²" min="0" step="0.01" class="rounded border border-black px-4" required>
+                    <button onclick="this.parentElement.remove()">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                         </svg>
-                    </button>
+                    </button>                
                 </div>
-                <div class="flex flex-col gap-4">
-                    <div class="flex justify-end pt-4">
-                        <button class="bg-gray-400 rounded p-2 mt-2 justify-self-end" onClick="addMaterial(this)">Adicionar Novo Material</button>
-                    </div>
-                </div>
-                <hr class="my-4">
-            </div>
-            `;
+            `
 
-            document.getElementById('dimensions').insertAdjacentHTML('beforeend', htmlTemplate);
-
+            dimension.parentElement.parentElement.insertAdjacentHTML('beforeend', htmlTemplate);
         }
 
-    function addMaterial(dimension) {
-        let items = columns.reduce((accumulator, currentValue, index) => {
-            return accumulator+`<option value="${index}">${currentValue[0]}</option>`
-        }, "")
+        function calculate() {
+            let dimensionsNode = document.getElementById("dimensions");
+            let dimensionChildren = dimensionsNode.children;
+            let finalDimensionData = [];
 
-        let htmlTemplate = `
-            <div class="flex gap-2">
-                <select name="" id="" class="w-full rounded border border-black">
-                    ${items}
-                </select>
-                <input type="number" placeholder="Informe a área em m²" min="0" step="0.01" class="rounded border border-black px-4" required>
-                <button onclick="this.parentElement.remove()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                    </svg>
-                </button>                
-            </div>
-        `
+            for (dimensionChild of dimensionChildren) {
+                let dimensionName = dimensionChild.children[0].children[0].innerHTML.substring(12);
+                let buttonPlusMaterial = dimensionChild.children[1]
+                let area = 0
+                let coeficientesAndAreas = []
+                for (let cont = 1; cont < buttonPlusMaterial.children.length; cont++) {
+                    let selectedOptionId = buttonPlusMaterial.children[cont].children[0].value;
+                    let inputArea = parseFloat(buttonPlusMaterial.children[cont].children[1].value);
 
-        dimension.parentElement.parentElement.insertAdjacentHTML('beforeend', htmlTemplate);
-    }
+                    area+= inputArea
+                    coeficientesAndAreas.push([calculaCoeficienteMaterial(selectedOptionId), inputArea])
+                }
 
-    function calculate() {
-        let dimensionsNode = document.getElementById("dimensions");
-        let dimensionChildren = dimensionsNode.children;
-        let finalDimensionData = [];
+                finalDimensionData.push([dimensionName, area, dimensionLossTransmition(coeficientesAndAreas, area)])
 
-        for (dimensionChild of dimensionChildren) {
-            let dimensionName = dimensionChild.children[0].children[0].innerHTML.substring(12);
-            let buttonPlusMaterial = dimensionChild.children[1]
-            let area = 0
-            let coeficientesAndAreas = []
-            for (let cont = 1; cont < buttonPlusMaterial.children.length; cont++) {
-                let selectedOptionId = buttonPlusMaterial.children[cont].children[0].value;
-                let inputArea = parseFloat(buttonPlusMaterial.children[cont].children[1].value);
-
-                area+= inputArea
-                coeficientesAndAreas.push([calculaCoeficienteMaterial(selectedOptionId), inputArea])
             }
 
-            finalDimensionData.push([dimensionName, area, dimensionLossTransmition(coeficientesAndAreas, area)])
+            printTable(finalDimensionData)
+        }
+
+        function calculaCoeficienteMaterial(materialId) {
+
+            let material = columns[materialId];
+
+            let coeficientes = [
+                10**(-parseFloat(material[3])/10),
+                10**(-parseFloat(material[4])/10),
+                10**(-parseFloat(material[5])/10),
+                10**(-parseFloat(material[6])/10),
+                10**(-parseFloat(material[7])/10),
+                10**(-parseFloat(material[8])/10),
+                10**(-parseFloat(material[9])/10),
+                10**(-parseFloat(material[10])/10)
+            ];
+
+            return coeficientes
 
         }
 
-        printTable(finalDimensionData)
-    }
+        function dimensionLossTransmition(coeficientesAndAreas, totalArea) {
 
-    function calculaCoeficienteMaterial(materialId) {
+            let length = coeficientesAndAreas.length
+            let results = [0,0,0,0,0,0,0,0];
 
-        let material = columns[materialId];
+            for (let cont = 0; cont < length; cont++) {
 
-        let coeficientes = [
-            10**(-parseFloat(material[3])/10),
-            10**(-parseFloat(material[4])/10),
-            10**(-parseFloat(material[5])/10),
-            10**(-parseFloat(material[6])/10),
-            10**(-parseFloat(material[7])/10),
-            10**(-parseFloat(material[8])/10),
-            10**(-parseFloat(material[9])/10),
-            10**(-parseFloat(material[10])/10)
-        ];
+                results[0] += coeficientesAndAreas[cont][0][0]*coeficientesAndAreas[cont][1]
+                results[1] += coeficientesAndAreas[cont][0][1]*coeficientesAndAreas[cont][1]
+                results[2] += coeficientesAndAreas[cont][0][2]*coeficientesAndAreas[cont][1]
+                results[3] += coeficientesAndAreas[cont][0][3]*coeficientesAndAreas[cont][1]
+                results[4] += coeficientesAndAreas[cont][0][4]*coeficientesAndAreas[cont][1]
+                results[5] += coeficientesAndAreas[cont][0][5]*coeficientesAndAreas[cont][1]
+                results[6] += coeficientesAndAreas[cont][0][6]*coeficientesAndAreas[cont][1]
+                results[7] += coeficientesAndAreas[cont][0][7]*coeficientesAndAreas[cont][1]
+            }
 
-        return coeficientes
+            let values = results.map(function(elemento){ return (10*Math.log10(1 / (elemento / totalArea))).toFixed(2) })
 
-    }
+            return values
 
-    function dimensionLossTransmition(coeficientesAndAreas, totalArea) {
-    
-        let length = coeficientesAndAreas.length
-        let results = [0,0,0,0,0,0,0,0];
-
-        for (let cont = 0; cont < length; cont++) {
-
-            results[0] += coeficientesAndAreas[cont][0][0]*coeficientesAndAreas[cont][1]
-            results[1] += coeficientesAndAreas[cont][0][1]*coeficientesAndAreas[cont][1]
-            results[2] += coeficientesAndAreas[cont][0][2]*coeficientesAndAreas[cont][1]
-            results[3] += coeficientesAndAreas[cont][0][3]*coeficientesAndAreas[cont][1]
-            results[4] += coeficientesAndAreas[cont][0][4]*coeficientesAndAreas[cont][1]
-            results[5] += coeficientesAndAreas[cont][0][5]*coeficientesAndAreas[cont][1]
-            results[6] += coeficientesAndAreas[cont][0][6]*coeficientesAndAreas[cont][1]
-            results[7] += coeficientesAndAreas[cont][0][7]*coeficientesAndAreas[cont][1]
         }
 
-        let values = results.map(function(elemento){ return (10*Math.log10(1 / (elemento / totalArea))).toFixed(2) })
+        function printTable(data) {
+            let tableBody = document.getElementById("table")
+            tableBody.innerHTML = ""
+            let template = ""
 
-        return values
+            data.forEach(element => {
+                template += `
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        ${element[0]}
+                    </th>
+                    <td class="px-6 py-4">
+                        ${element[1]} m²
+                    </td>
+                    <td class="px-6 py-4">
+                        ${element[2][0]}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${element[2][1]}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${element[2][2]}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${element[2][3]}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${element[2][4]}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${element[2][5]}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${element[2][6]}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${element[2][7]}
+                    </td>
+                </tr>
+                `
+            })
 
-    }
+            tableBody.innerHTML = template
 
-    function printTable(data) {
-        let tableBody = document.getElementById("table")
-        tableBody.innerHTML = ""
-        let template = ""
-
-        data.forEach(element => {
-            template += `
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    ${element[0]}
-                </th>
-                <td class="px-6 py-4">
-                    ${element[1]} m²
-                </td>
-                <td class="px-6 py-4">
-                    ${element[2][0]}
-                </td>
-                <td class="px-6 py-4">
-                    ${element[2][1]}
-                </td>
-                <td class="px-6 py-4">
-                    ${element[2][2]}
-                </td>
-                <td class="px-6 py-4">
-                    ${element[2][3]}
-                </td>
-                <td class="px-6 py-4">
-                    ${element[2][4]}
-                </td>
-                <td class="px-6 py-4">
-                    ${element[2][5]}
-                </td>
-                <td class="px-6 py-4">
-                    ${element[2][6]}
-                </td>
-                <td class="px-6 py-4">
-                    ${element[2][7]}
-                </td>
-            </tr>
-            `
-        })
-
-        tableBody.innerHTML = template
-
-    }
-        </script>
-    </body>
+        }
+            </script>
+        </div>    
+    </main>
+</body>
 </html>
