@@ -39,7 +39,7 @@
 .flex-item {
     width:37rem;
     /* background: #cca4d220; */
-    background: #4E54B210;
+    background: rgba(240, 185, 255, 0.108);
     border: 0.5px solid black;
     padding: 2rem;
     text-align: center;

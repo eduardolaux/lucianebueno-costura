@@ -18,37 +18,18 @@ html {
 
 body {
     color: #0D0D0D;
-    /* background-image: linear-gradient(to bottom, white, #f9f9f9, #D9D9D9); */
-    /* background-image: linear-gradient(to bottom, #09034859, #4e55b248, #cca4d272, #f2d89b5d); */
     background-attachment: fixed;
     background-color: white;
     font-family: 'Poppins', sans-serif;
-    /* font-family: 'A Pompadour Sample', sans-serif; */
 }
-
-
-/*===== VARIABLES CSS =====*/
-
-
-/* Cores da paleta logo:
-Azul marinho: #090348
-Azul claro:   #4e54b2
-#4F0348#0D046ERoxo claro:   #cca4d2
-Amarelo:      #f2d89b
-*/
 
 :root {
   --header-height: 4.5rem;
   
   /*===== Colores =====*/
-  /* --first-color: #c5c5c5; */
-  /* --first-color: #0D046E; */
-  --first-color: #4E54B2;
+  --first-color: rgb(240, 185, 255);
   --dark-color: white;
-  /* --dark-color: #090348; */
   --dark-color-alt: white;
-  /* --dark-color-alt: #560349; */
-  /* --white-color: #313030; */
   --white-color: #090348;
  
 
@@ -106,18 +87,13 @@ a {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
-  /* box-shadow: 0 0.2rem 0.4rem rgb(86, 3, 73); */
 }
-
-/* .header__logo {
-  color: var(--white-color);
-} */
 
 .header__toggle {
   font-size: 3rem;
   cursor: pointer;
   /* color: #090348; */
-  color:#4E54B2;
+  color:rgb(215, 97, 248);
   /* color: #4E54B2; */
 }
 
@@ -131,7 +107,7 @@ a {
     color: var(--white-color);
     width: 50%;
     height: 100vh;
-    padding: 1.5rem 0;
+    padding: .5rem 0;
     z-index: var(--z-fixed);
     -webkit-transition: .5s;
     transition: .5s;
@@ -140,10 +116,10 @@ a {
 }
 
 .nav__content {
-  height: 100%;
+  height: 50%;
   -ms-grid-rows: max-content 1fr max-content;
-      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
-      grid-template-rows: max-content 1fr max-content;
+      grid-template-rows: -webkit-max-content 1fr -webkit-max-content; */
+       grid-template-rows: max-content 1fr max-content;
   row-gap: 2rem;
 }
 
@@ -165,8 +141,7 @@ a {
   height: 106px;
   background-color: white;
   border-radius: 50%;
-  /* border: 0.5px solid #343434; */
-  border: 0.5px solid #4E54B2;
+  border: 0.5px solid rgb(215, 97, 248);
   overflow: hidden;
 }
 
@@ -190,7 +165,7 @@ a {
 }
 
 .nav__item {
-  margin: 3rem 0;
+  margin: 3rem 0rem 0rem 0rem;
 }
 
 .nav__link {
@@ -228,13 +203,12 @@ Amarelo:      #f2d89b
 
 .nav__social-icon2 {
   font-size: 1.2rem;
-  color: white;
+  color: black;
   margin-right: 0.5rem;
 }
 
 .nav__social-icon2:hover {
   color: #c5c5c5;
-  /* color: #560349 */
 }
 
 /*Aparecer menu*/
@@ -244,8 +218,7 @@ Amarelo:      #f2d89b
 
 /*Active menu*/
 .active {
-  /* color: #595959; */
-  color: white
+  color: black
 }
 
 /*=== Dropdown ===*/
@@ -339,7 +312,7 @@ Amarelo:      #f2d89b
     align-items: center;
   }
   .nav__item {
-    margin: 0 1rem;
+    margin: 0 4.5rem;
   }
   .nav__link {
     padding: .3rem 1rem;
@@ -410,6 +383,10 @@ main {
   padding-bottom: 3rem;
 }
 
+.main_container2 {
+  margin-top: 6rem;
+}
+
 /*_______________________ ACIMA DA BARRA DE NAVEGADOR ______________________*/
 
 .tamlogo {
@@ -426,10 +403,6 @@ main {
   width: 90%;
   max-width: 110rem;
 
-   /* display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; */
 }
 
 .container_homepage h1 {
@@ -465,10 +438,6 @@ main {
     max-width: 36rem;
   }
 
-  /* .text-box p {
-    text-align: center;
-  } */
-
 }
 
 /* ______________________ TEXTOS ________________________________ */
@@ -477,8 +446,6 @@ main {
 .center {
     text-align: center;
     font-size: 1.6rem;
-    /* text-align-last: center; */
-    /* align-items: center; */
 }   
 
 .center p {
@@ -511,9 +478,8 @@ color: black;
 
 h1 {
     font-size: 3.6rem;
-    /* color:black; */
-    /* color:#090348; */
-    color:#4E54B2;
+    color:rgb(240, 185, 255);
+    /* color:#4E54B2; */
     padding: 0.2rem;
     /* font-family: 'A Pompadour Sample', sans-serif; */
   }
@@ -522,7 +488,7 @@ h2 {
     padding: 0.4rem;
     font-size: 2.8rem;
     /* color:#090348; */
-    color:#4E54B2;
+    color:rgb(240, 185, 255);
     /* font-family: 'A Pompadour Sample', sans-serif; */
     /* color:black; */
 }
@@ -530,7 +496,7 @@ h2 {
 h3 {
   padding-top: 2rem;
   font-size: 2.2rem;
-  color:#4E54B2;
+  color:rgb(240, 185, 255);
   /* color:black; */
 }
 
@@ -638,7 +604,7 @@ footer {
     /* max-width:max-content;   Especifica largura máxima (quando o celular está deitado) */
     /* background-color: black; */
     /* background-color: rgb(77, 77, 77); */
-    background-color: #090348;
+    background-color: rgba(246, 213, 255, 0.303);
     min-width: 320px;   /*Especifica a largura mínima que os elementos da tela principal irão ocupar (até largura máxima para quando o celular está na vertical)*/
     padding-bottom: 25px;
     margin: 0 auto;     /* Mantém os elementos do bloco centralizados na página*/
@@ -652,7 +618,7 @@ footer {
 footer p{
     margin-top: 25px;       /* Espaçamento entre ícones das redes sociais*/
     /* text-align: center; */
-    color: white;
+    color: black;
 }
 
 .footer-2 {
@@ -715,7 +681,7 @@ background-color: red;
 .form button {
     font-size: 16px;
     display: block;
-    background: #0072c4;
+    background: rgb(240, 185, 255);
     color: #fff;
     /* font: inherit; */
     text-transform: uppercase;
@@ -783,7 +749,7 @@ button {
     height: 60px;
     bottom: 40px;
     right: 40px;
-    background-color: #25d366;
+    background-color: rgb(240, 185, 255);
     color: #fff;
     border-radius: 50px;
     text-align: center;
